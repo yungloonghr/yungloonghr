@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=900">
+<title>懷孕、分娩與育兒員工權益保障 主管宣導冊</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D2B4E;
+    --blue: #1A5276;
+    --sky: #2E86AB;
+    --teal: #1B8A7A;
+    --amber: #E67E22;
+    --gold: #F39C12;
+    --red: #C0392B;
+    --rose: #E74C3C;
+    --cream: #FDF8F2;
+    --light: #EBF4F9;
+    --pale: #F0FAF8;
+    --white: #FFFFFF;
+    --ink: #1C2B3A;
+    --muted: #5D7080;
+    --border: #C8DDE9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: #f0f4f8;
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .page {
+    width: 900px;
+    margin: 30px auto;
+    background: var(--white);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(13,43,78,0.13);
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: linear-gradient(145deg, var(--navy) 0%, #1A3A6B 50%, #0F4C75 100%);
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 64px 56px;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(46,134,171,0.3) 0%, transparent 70%);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(230,126,34,0.18) 0%, transparent 70%);
+  }
+  .cover-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+    width: fit-content;
+    backdrop-filter: blur(4px);
+  }
+  .cover-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+  .cover-main { flex: 1; display: flex; align-items: flex-start; gap: 48px; position: relative; z-index: 1; }
+  .cover-text { flex: 1; }
+  .cover-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .cover-title {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .cover-title span { color: var(--gold); }
+  .cover-sub {
+    font-size: 20px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .cover-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.75);
+    font-size: 12px;
+  }
+  .cover-meta-item svg { opacity: 0.8; }
+  .cover-illo {
+    width: 220px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Cover SVG Illustration */
+  .cover-stats {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    position: relative; z-index: 1;
+  }
+  .cover-stat {
+    flex: 1;
+    text-align: center;
+  }
+  .cover-stat-num {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .cover-stat-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+  .cover-stat-div {
+    width: 1px;
+    background: rgba(255,255,255,0.2);
+    align-self: stretch;
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-head {
+    background: var(--navy);
+    padding: 28px 64px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-head.amber { background: linear-gradient(90deg, #7D3C00, var(--amber)); }
+  .section-head.red { background: linear-gradient(90deg, #6E1A14, var(--red)); }
+  .section-head.teal { background: linear-gradient(90deg, #0B4D43, var(--teal)); }
+  .section-head.sky { background: linear-gradient(90deg, #0D3A56, var(--sky)); }
+  .section-num {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+  }
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .section-icon {
+    margin-left: auto;
+    opacity: 0.3;
+  }
+
+  /* ── CONTENT ── */
+  .content { padding: 48px 64px; flex: 1; }
+  .content-sm { padding: 36px 64px; flex: 1; }
+
+  /* ── STAT CARDS ── */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .stat-card {
+    background: var(--light);
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    border-top: 3px solid var(--sky);
+    position: relative;
+    overflow: hidden;
+  }
+  .stat-card::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; right: -20px;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: rgba(46,134,171,0.08);
+  }
+  .stat-card.amber { border-top-color: var(--amber); }
+  .stat-card.amber::after { background: rgba(230,126,34,0.08); }
+  .stat-card.teal { border-top-color: var(--teal); }
+  .stat-card.red { border-top-color: var(--red); }
+  .stat-num {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--sky);
+    line-height: 1;
+  }
+  .stat-card.amber .stat-num { color: var(--amber); }
+  .stat-card.teal .stat-num { color: var(--teal); }
+  .stat-card.red .stat-num { color: var(--red); }
+  .stat-unit { font-size: 14px; font-weight: 500; }
+  .stat-desc { font-size: 11px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+
+  /* ── INTRO CALLOUT ── */
+  .callout {
+    background: var(--light);
+    border-left: 4px solid var(--sky);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    font-size: 13.5px;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  .callout.amber { border-left-color: var(--amber); background: #FEF5E7; }
+  .callout.red { border-left-color: var(--red); background: #FDEDEC; }
+  .callout.teal { border-left-color: var(--teal); background: var(--pale); }
+  .callout strong { color: var(--navy); }
+
+  /* ── CONCEPT BOXES ── */
+  .concept-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .concept-box {
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .concept-box-head {
+    background: var(--navy);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .concept-box-head .num {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 11px;
+    font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .concept-box-head .label {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.35;
+  }
+  .concept-box-body {
+    padding: 12px 16px;
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.65;
+    background: #FAFCFE;
+  }
+
+  /* ── RIGHTS TABLE ── */
+  .rights-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .rights-table th {
+    background: var(--navy);
+    color: var(--white);
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 11.5px;
+    letter-spacing: 0.03em;
+  }
+  .rights-table td {
+    padding: 9px 12px;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.55;
+  }
+  .rights-table tr:nth-child(even) td { background: #F5F9FC; }
+  .rights-table tr:last-child td { border-bottom: none; }
+  .rights-table .item-name {
+    font-weight: 700;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+  .rights-table .law-tag {
+    display: inline-block;
+    background: var(--light);
+    color: var(--sky);
+    font-size: 10px;
+    padding: 1px 7px;
+    border-radius: 20px;
+    white-space: nowrap;
+    border: 1px solid var(--border);
+  }
+  .rights-table .no-tag {
+    color: var(--red);
+    font-size: 11px;
+  }
+
+  /* ── RED ZONE ── */
+  .red-zone-grid {
+    display: grid;
+    gap: 14px;
+  }
+  .red-zone-card {
+    border: 1.5px solid #F5B7B1;
+    border-radius: 10px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 140px 1fr 1fr;
+  }
+  .rz-situation {
+    background: var(--red);
+    padding: 14px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+  }
+  .rz-situation .rz-icon { font-size: 20px; }
+  .rz-situation .rz-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.35;
+  }
+  .rz-wrong {
+    background: #FEF5E7;
+    padding: 12px 14px;
+    border-right: 1px solid #F5B7B1;
+  }
+  .rz-right {
+    background: #EAFAF1;
+    padding: 12px 14px;
+  }
+  .rz-col-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .rz-wrong .rz-col-label { color: #922B21; }
+  .rz-right .rz-col-label { color: #1A7A4A; }
+  .rz-text { font-size: 12px; line-height: 1.55; color: var(--ink); }
+  .rz-risk {
+    font-size: 10.5px;
+    color: var(--red);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  /* ── PROCESS STEPS ── */
+  .steps { display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step.danger .step-num { background: var(--red); }
+  .step-content { flex: 1; padding-top: 6px; }
+  .step-title { font-size: 13.5px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .step.danger .step-title { color: var(--red); }
+  .step-desc { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+  .step-illo { width: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+  /* ── DATA CHARTS ── */
+  .chart-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 24px 0;
+  }
+  .chart-box {
+    background: var(--light);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .chart-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+  }
+  .bar-chart { display: flex; flex-direction: column; gap: 10px; }
+  .bar-item { display: flex; flex-direction: column; gap: 4px; }
+  .bar-label { font-size: 11px; color: var(--muted); display: flex; justify-content: space-between; }
+  .bar-label .val { font-weight: 700; color: var(--ink); }
+  .bar-track { height: 8px; background: rgba(0,0,0,0.08); border-radius: 4px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 4px; }
+
+  /* Donut chart */
+  .donut-wrap { display: flex; align-items: center; gap: 16px; }
+  .donut-legend { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 11.5px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+  .legend-val { margin-left: auto; font-weight: 700; color: var(--ink); }
+
+  /* ── WELFARE CARDS ── */
+  .welfare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .welfare-card {
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .welfare-card.blue {
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    color: var(--white);
+  }
+  .welfare-card.amber-c {
+    background: linear-gradient(135deg, #7D4000, var(--amber));
+    color: var(--white);
+  }
+  .welfare-card-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .welfare-card-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .welfare-card-desc {
+    font-size: 12.5px;
+    opacity: 0.85;
+    line-height: 1.65;
+  }
+  .welfare-highlight {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 10px;
+  }
+  .welfare-card::after {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+  }
+
+  /* ── FOOTER ── */
+  .page-footer {
+    background: var(--navy);
+    padding: 20px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-left { font-size: 11px; color: rgba(255,255,255,0.5); }
+  .footer-right { display: flex; gap: 20px; }
+  .footer-law {
+    font-size: 10.5px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.5;
+  }
+  .footer-tag {
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ── WARNING BOX ── */
+  .warning-box {
+    background: #FDEDEC;
+    border: 1.5px solid #F1948A;
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin: 16px 0;
+  }
+  .warning-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+  .warning-text { font-size: 12.5px; color: var(--ink); line-height: 1.65; }
+  .warning-text strong { color: var(--red); }
+
+  /* ── ESG SECTION ── */
+  .esg-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .esg-card {
+    border-radius: 10px;
+    padding: 16px 14px;
+    text-align: center;
+    background: var(--light);
+    border-top: 3px solid var(--sky);
+  }
+  .esg-card.g2 { border-top-color: var(--teal); }
+  .esg-card.g3 { border-top-color: var(--amber); }
+  .esg-card.g4 { border-top-color: var(--navy); }
+  .esg-icon { font-size: 24px; margin-bottom: 8px; }
+  .esg-num { font-size: 22px; font-weight: 900; color: var(--sky); line-height: 1; }
+  .esg-card.g2 .esg-num { color: var(--teal); }
+  .esg-card.g3 .esg-num { color: var(--amber); }
+  .esg-card.g4 .esg-num { color: var(--navy); }
+  .esg-label { font-size: 11px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 28px 0;
+  }
+
+  /* ── CONCLUSION ── */
+  .conclusion-banner {
+    background: linear-gradient(135deg, var(--navy) 0%, #1A5276 100%);
+    border-radius: 12px;
+    padding: 28px 32px;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    margin: 8px 0;
+  }
+  .conclusion-banner::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 150px; height: 150px;
+    border-radius: 50%;
+    background: rgba(230,126,34,0.15);
+  }
+  .conclusion-banner p {
+    font-size: 13px;
+    line-height: 1.9;
+    opacity: 0.9;
+    position: relative; z-index: 1;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    html, body {
+      background: white;
+      margin: 0;
+      padding: 0;
+      width: 794px;
+    }
+    .page {
+      width: 794px;
+      height: 1123px;
+      margin: 0;
+      box-shadow: none;
+      border-radius: 0;
+      page-break-after: always;
+      break-after: page;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .page:last-child {
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+    .cover { padding: 28px 42px 24px; flex-shrink: 0; }
+    .section-head { padding: 14px 42px; flex-shrink: 0; }
+    .content { padding: 20px 42px; flex: 1; overflow: hidden; }
+    .content-sm { padding: 14px 42px; flex: 1; overflow: hidden; }
+    .page-footer { padding: 10px 42px; flex-shrink: 0; margin-top: auto; }
+    .stat-grid { margin-bottom: 12px; }
+    .stat-card { padding: 12px 10px; }
+    .stat-num { font-size: 22px; }
+    .chart-row { gap: 14px; margin: 12px 0; }
+    .chart-box { padding: 14px; }
+    .esg-grid { gap: 10px; margin: 10px 0; }
+    .esg-card { padding: 10px; }
+    .concept-grid { gap: 10px; margin: 12px 0; }
+    .concept-box-head { padding: 7px 14px; }
+    .concept-box-body { padding: 9px 14px; font-size: 11.5px; }
+    .red-zone-grid { gap: 8px; }
+    .rz-situation { padding: 8px 10px; }
+    .rz-wrong, .rz-right { padding: 7px 10px; }
+    .rz-text { font-size: 11px; }
+    .rz-risk { font-size: 10px; }
+    .step { padding: 8px 0; }
+    .step-desc { font-size: 11.5px; }
+    .callout { padding: 10px 14px; margin-bottom: 10px; font-size: 12.5px; }
+    .welfare-grid { gap: 12px; margin: 12px 0; }
+    .welfare-card { padding: 16px; }
+    .welfare-card-icon { font-size: 24px; margin-bottom: 8px; }
+    .divider { margin: 12px 0; }
+    .section-intro { margin-bottom: 12px; font-size: 12px; }
+    .cover-stats { margin-top: 14px; padding-top: 14px; }
+    .cover-stat-num { font-size: 20px; }
+    .cover-badge { margin-bottom: 14px; }
+    .cover-title { font-size: 36px; }
+    .cover-sub { margin-bottom: 16px; font-size: 16px; }
+    .cover-main { gap: 32px; }
+    .cover-illo { width: 160px; }
+    .toc-item { padding: 6px 0; }
+    .toc-name { font-size: 12px; }
+    .conclusion-banner { padding: 18px 22px; }
+    .conclusion-banner p { font-size: 12px; line-height: 1.75; }
+    .warning-box { padding: 10px 14px; margin: 8px 0; }
+    h3.sub { margin: 12px 0 8px; font-size: 13px; }
+    .section-title { font-size: 18px; }
+    .red-zone-card { page-break-inside: avoid; break-inside: avoid; }
+    .concept-box { page-break-inside: avoid; break-inside: avoid; }
+    .step { page-break-inside: avoid; break-inside: avoid; }
+    .welfare-card { page-break-inside: avoid; break-inside: avoid; }
+    .chart-box { page-break-inside: avoid; break-inside: avoid; }
+  }
+
+  /* ── TOC ── */
+  .toc { display: flex; flex-direction: column; gap: 0; margin-top: 8px; }
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .toc-item:last-child { border-bottom: none; }
+  .toc-num { font-size: 11px; font-weight: 700; color: var(--sky); width: 28px; flex-shrink: 0; }
+  .toc-name { font-size: 12.5px; font-weight: 500; flex: 1; }
+  .toc-dots { flex: 1; border-bottom: 1px dotted var(--border); height: 1px; margin: 0 12px; position: relative; top: -1px; }
+  .toc-page { font-size: 11px; color: var(--muted); width: 24px; text-align: right; }
+
+  .section-intro {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+
+  .pill {
+    display: inline-block;
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 11px;
+    color: var(--sky);
+    font-weight: 600;
+  }
+
+  h3.sub {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 24px 0 12px;
+    padding-left: 12px;
+    border-left: 3px solid var(--amber);
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 1: COVER
+══════════════════════════════════════════════ -->
+<div class="page">
+  <div class="cover">
+    <div class="cover-badge">
+      <div class="cover-dot"></div>
+      懷孕育兒權益保障 · 管理現場實務指引
+    </div>
+
+    <div class="cover-main">
+      <div class="cover-text">
+        <div class="cover-label">SUPERVISOR GUIDANCE HANDBOOK · 2026</div>
+        <div class="cover-title">
+          懷孕、分娩<br>與育兒員工<br><span>權益保障</span>
+        </div>
+        <div class="cover-sub">主管必讀 · 法規遵循 · 管理實務</div>
+        <div class="cover-meta">
+          <div class="cover-meta-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            版本：2026 年 4 月
+          </div>
+          <div class="cover-meta-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            適用：各級主管 · 人資窗口
+          </div>
+        </div>
+      </div>
+
+      <!-- Cover Illustration -->
+      <div class="cover-illo">
+        <svg width="200" height="240" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Building / workplace -->
+          <rect x="30" y="80" width="140" height="130" rx="6" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <!-- Windows -->
+          <rect x="48" y="96" width="28" height="20" rx="3" fill="rgba(243,156,18,0.5)"/>
+          <rect x="86" y="96" width="28" height="20" rx="3" fill="rgba(255,255,255,0.15)"/>
+          <rect x="124" y="96" width="28" height="20" rx="3" fill="rgba(255,255,255,0.15)"/>
+          <rect x="48" y="128" width="28" height="20" rx="3" fill="rgba(255,255,255,0.15)"/>
+          <rect x="86" y="128" width="28" height="20" rx="3" fill="rgba(243,156,18,0.5)"/>
+          <rect x="124" y="128" width="28" height="20" rx="3" fill="rgba(255,255,255,0.15)"/>
+          <!-- Door -->
+          <rect x="82" y="168" width="36" height="42" rx="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+          <!-- Person 1: pregnant -->
+          <circle cx="68" cy="50" r="12" fill="rgba(255,255,255,0.9)"/>
+          <ellipse cx="68" cy="68" rx="10" ry="13" fill="rgba(255,255,255,0.7)"/>
+          <ellipse cx="68" cy="74" rx="7" ry="6" fill="rgba(243,156,18,0.6)"/>
+          <!-- Person 2: manager -->
+          <circle cx="132" cy="50" r="12" fill="rgba(255,255,255,0.9)"/>
+          <rect x="122" y="64" width="20" height="18" rx="4" fill="rgba(46,134,171,0.7)"/>
+          <!-- Heart/care symbol between them -->
+          <path d="M100 58 C100 53, 95 48, 90 53 C85 58, 90 66, 100 72 C110 66, 115 58, 110 53 C105 48, 100 53, 100 58Z" fill="rgba(243,156,18,0.8)"/>
+          <!-- Shield -->
+          <path d="M100 18 L114 24 L114 36 C114 44 107 50 100 53 C93 50 86 44 86 36 L86 24 Z" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+          <path d="M95 36 L99 40 L107 32" stroke="rgba(243,156,18,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Decorative circles -->
+          <circle cx="22" cy="150" r="6" fill="rgba(243,156,18,0.2)" stroke="rgba(243,156,18,0.4)" stroke-width="1"/>
+          <circle cx="178" cy="100" r="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+          <circle cx="14" cy="200" r="3" fill="rgba(255,255,255,0.1)"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <div class="cover-stat-num">10</div>
+        <div class="cover-stat-label">大法定假別<br>完整對照說明</div>
+      </div>
+      <div class="cover-stat-div"></div>
+      <div class="cover-stat">
+        <div class="cover-stat-num">7</div>
+        <div class="cover-stat-label">高風險違法<br>情境預防指南</div>
+      </div>
+      <div class="cover-stat-div"></div>
+      <div class="cover-stat">
+        <div class="cover-stat-num">6</div>
+        <div class="cover-stat-label">標準處理<br>步驟 SOP</div>
+      </div>
+      <div class="cover-stat-div"></div>
+      <div class="cover-stat">
+        <div class="cover-stat-num">3</div>
+        <div class="cover-stat-label">大法規<br>查核日期更新</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <div class="content" style="padding-top:28px;padding-bottom:24px;">
+    <div style="font-size:11px;letter-spacing:0.15em;color:var(--muted);margin-bottom:10px;font-weight:600;text-transform:uppercase;">目　錄</div>
+    <div class="toc">
+      <div class="toc-item"><span class="toc-num">一</span><span class="toc-name">文件目的與使用方式</span><span class="toc-dots"></span><span class="toc-page">P2</span></div>
+      <div class="toc-item"><span class="toc-num">二</span><span class="toc-name">主管必須先建立的四個觀念</span><span class="toc-dots"></span><span class="toc-page">P2</span></div>
+      <div class="toc-item"><span class="toc-num">三</span><span class="toc-name">法定權益與主管管理重點</span><span class="toc-dots"></span><span class="toc-page">P3</span></div>
+      <div class="toc-item"><span class="toc-num">四</span><span class="toc-name">紅色警戒區：主管最容易踩線的違法情境</span><span class="toc-dots"></span><span class="toc-page">P4</span></div>
+      <div class="toc-item"><span class="toc-num">五</span><span class="toc-name">女性保護、母性健康保護與職場不法侵害</span><span class="toc-dots"></span><span class="toc-page">P5</span></div>
+      <div class="toc-item"><span class="toc-num">六</span><span class="toc-name">主管收到申請時的標準處理流程</span><span class="toc-dots"></span><span class="toc-page">P5</span></div>
+      <div class="toc-item"><span class="toc-num">七</span><span class="toc-name">少子化數據與企業 ESG 責任</span><span class="toc-dots"></span><span class="toc-page">P6</span></div>
+      <div class="toc-item"><span class="toc-num">八</span><span class="toc-name">公司現有福利政策</span><span class="toc-dots"></span><span class="toc-page">P7</span></div>
+      <div class="toc-item"><span class="toc-num">九</span><span class="toc-name">結語</span><span class="toc-dots"></span><span class="toc-page">P8</span></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">懷孕育兒權益保障 · 管理現場實務指引 · 2026.04</div>
+    <div class="footer-tag">P 1</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE 2: 一 + 二
+══════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-head sky">
+    <div>
+      <div class="section-num">SECTION 01</div>
+      <div class="section-title">文件目的與使用方式</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="callout" style="margin-bottom:12px;">
+      <strong>這份文件的目的</strong>，不只是整理法令，更是協助主管在管理實務中，知道哪些可以做、哪些不能做、遇到問題時應如何正確處理，有效降低誤判風險與法律爭議。
+    </div>
+
+    <div class="section-intro" style="margin-bottom:10px;">當您在管理現場遇到以下任何情況時，請先閱讀這份說明書：</div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
+      <div style="display:flex;gap:10px;align-items:flex-start;background:#F8FAFC;border-radius:8px;padding:10px 12px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--light);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--sky);flex-shrink:0;">Q1</div>
+        <div style="font-size:12.5px;color:var(--ink);line-height:1.6;">陪產檢假、陪產假到底是什麼？哪些人可以申請？</div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:#F8FAFC;border-radius:8px;padding:10px 12px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--light);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--sky);flex-shrink:0;">Q2</div>
+        <div style="font-size:12.5px;color:var(--ink);line-height:1.6;">請假後可以在考績、全勤、升遷上做反映嗎？</div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:#F8FAFC;border-radius:8px;padding:10px 12px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--light);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--sky);flex-shrink:0;">Q3</div>
+        <div style="font-size:12.5px;color:var(--ink);line-height:1.6;">不確定假別是否適用時，可以直接駁回嗎？</div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:#F8FAFC;border-radius:8px;padding:10px 12px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--light);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--sky);flex-shrink:0;">Q4</div>
+        <div style="font-size:12.5px;color:var(--ink);line-height:1.6;">哪些日常情況可能涉及不法侵害，衍生勞檢風險？</div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:#F8FAFC;border-radius:8px;padding:10px 12px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--light);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--sky);flex-shrink:0;">Q5</div>
+        <div style="font-size:12.5px;color:var(--ink);line-height:1.6;">員工懷孕時，主管如何兼顧法令遵循與工作安排？</div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:#F8FAFC;border-radius:8px;padding:10px 12px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--light);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--sky);flex-shrink:0;">Q6</div>
+        <div style="font-size:12.5px;color:var(--ink);line-height:1.6;">員工提出育兒需求時，主管如何回應才不產生爭議？</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-head" style="background:linear-gradient(90deg,#0D3A56,var(--sky));margin:0 -64px 28px;padding:28px 64px;">
+      <div>
+        <div class="section-num">SECTION 02</div>
+        <div class="section-title">主管必須先建立的四個觀念</div>
+      </div>
+
+    </div>
+
+    <div class="concept-grid">
+      <div class="concept-box">
+        <div class="concept-box-head">
+          <div class="num">1</div>
+          <div class="label">法定假別不是主管可以自由改名或替換的項目</div>
+        </div>
+        <div class="concept-box-body">員工依法提出申請時，不能要求改請特休、事假或補休。「先用你自己的假」不是折衷方案，而可能是<strong style="color:var(--red)">違法</strong>。</div>
+      </div>
+      <div class="concept-box">
+        <div class="concept-box-head">
+          <div class="num">2</div>
+          <div class="label">主管沒有「因工作需要否決法定權利」的裁量空間</div>
+        </div>
+        <div class="concept-box-body">可就交接、代理、時程安排做管理，但不能以業務繁忙、人力不足、月底很忙為由<strong style="color:var(--red)">否決員工依法請求</strong>。</div>
+      </div>
+      <div class="concept-box">
+        <div class="concept-box-head">
+          <div class="num">3</div>
+          <div class="label">違法風險不只在正式公文，也發生在日常對話</div>
+        </div>
+        <div class="concept-box-body">「妳都懷孕了還能做這個嗎？」「生完還回得來嗎？」這類言語，都可能成為<strong style="color:var(--red)">差別待遇的事證</strong>。</div>
+      </div>
+      <div class="concept-box">
+        <div class="concept-box-head">
+          <div class="num">4</div>
+          <div class="label">主管是政策落地第一線</div>
+        </div>
+        <div class="concept-box-body">再完整的制度，只要主管搞錯或故意淡化，員工就不敢用。制度有效，往往取決於<strong style="color:var(--navy)">主管的第一句回應</strong>。</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">懷孕育兒權益保障 · 管理現場實務指引 · 2026.04</div>
+    <div class="footer-tag">P 2</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE 3: 三、法定權益表
+══════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-head">
+    <div>
+      <div class="section-num">SECTION 03</div>
+      <div class="section-title">法定權益與主管管理重點</div>
+    </div>
+    <div class="section-icon">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.5">
+        <rect x="4" y="8" width="40" height="32" rx="3"/>
+        <line x1="4" y1="16" x2="44" y2="16"/>
+        <line x1="16" y1="16" x2="16" y2="40"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="content-sm">
+    <!-- Stat row -->
+    <div class="stat-grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:24px;">
+      <div class="stat-card">
+        <div class="stat-num">7<span class="stat-unit">日</span></div>
+        <div class="stat-desc">產檢假<br>薪資照給</div>
+      </div>
+      <div class="stat-card amber">
+        <div class="stat-num">7<span class="stat-unit">日</span></div>
+        <div class="stat-desc">陪產檢假及陪產假<br>薪資照給</div>
+      </div>
+      <div class="stat-card teal">
+        <div class="stat-num">6<span class="stat-unit">月</span></div>
+        <div class="stat-desc">育嬰留停<br>最長可申請</div>
+      </div>
+      <div class="stat-card red">
+        <div class="stat-num">7<span class="stat-unit">日</span></div>
+        <div class="stat-desc">家庭照顧假<br>全年額度</div>
+      </div>
+    </div>
+
+    <table class="rights-table">
+      <thead>
+        <tr>
+          <th style="width:80px;">假別</th>
+          <th style="width:120px;">適用對象</th>
+          <th style="width:130px;">給薪 / 補助</th>
+          <th style="width:90px;">法源</th>
+          <th>主管不可做的事</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="item-name">產假</td>
+          <td>女性受僱者分娩或流產</td>
+          <td>任職滿6月照給；未滿6月減半</td>
+          <td><span class="law-tag">勞基法50</span></td>
+          <td><span class="no-tag">✗</span> 要求改請其他假別或返工</td>
+        </tr>
+        <tr>
+          <td class="item-name">產檢假</td>
+          <td>懷孕之受僱者</td>
+          <td>7日，薪資照給，可按小時請</td>
+          <td><span class="law-tag">性平法15</span></td>
+          <td><span class="no-tag">✗</span> 要求改請特休、病假或事假</td>
+        </tr>
+        <tr>
+          <td class="item-name">陪產檢<br>陪產假</td>
+          <td>陪伴配偶產檢或分娩之受僱者</td>
+          <td>合計7日，薪資照給</td>
+          <td><span class="law-tag">性平法15</span></td>
+          <td><span class="no-tag">✗</span> 以「男生不用請」或「部門忙」拒絕</td>
+        </tr>
+        <tr>
+          <td class="item-name">安胎休養</td>
+          <td>醫師診斷需安胎之懷孕員工</td>
+          <td>實務多依病假規定辦理</td>
+          <td><span class="law-tag">性平法15、21</span></td>
+          <td><span class="no-tag">✗</span> 因安胎影響全勤、考績或做不利處分</td>
+        </tr>
+        <tr>
+          <td class="item-name">育嬰<br>留職停薪</td>
+          <td>任職滿6月且子女3歲前之受僱者</td>
+          <td>雇主不給薪；可申請就保津貼60%＋政府補貼20%，最長6月</td>
+          <td><span class="law-tag">性平法16</span></td>
+          <td><span class="no-tag">✗</span> 拒絕、逼退、復職後降職降薪</td>
+        </tr>
+        <tr>
+          <td class="item-name">哺集乳時間</td>
+          <td>有親自哺集乳需求之女性勞工</td>
+          <td>子女兩歲前，每日哺集乳2次×30分鐘，視為工作時間</td>
+          <td><span class="law-tag">性平法18</span></td>
+          <td><span class="no-tag">✗</span> 扣薪、以部門忙為由否決</td>
+        </tr>
+        <tr>
+          <td class="item-name">家庭<br>照顧假</td>
+          <td>家庭成員需親自照顧者（非限育兒）</td>
+          <td>併入事假，全年7日</td>
+          <td><span class="law-tag">性平法20</span></td>
+          <td><span class="no-tag">✗</span> 要求一律改請特休</td>
+        </tr>
+        <tr>
+          <td class="item-name">工時調整</td>
+          <td>撫育未滿3歲子女、30人以上雇主</td>
+          <td>減1小時者不得請求報酬；調整工時薪資不變</td>
+          <td><span class="law-tag">性平法19</span></td>
+          <td><span class="no-tag">✗</span> 一口回絕，不進行協商</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="margin-top:20px;">
+      <strong>⚡ 育嬰留停新制（115年起）：</strong>可以「日」為單位彈性申請；少於6個月者，得以30日以上申請，並有次數限制。請確認人資已更新相關說明。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">懷孕育兒權益保障 · 管理現場實務指引 · 2026.04</div>
+    <div class="footer-tag">P 3</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE 4: 四、紅色警戒區
+══════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-head red">
+    <div>
+      <div class="section-num">SECTION 04</div>
+      <div class="section-title">🚨 紅色警戒區：主管最容易踩線的違法情境</div>
+    </div>
+  </div>
+
+  <div class="content-sm">
+    <div class="callout red" style="margin-bottom:20px;">
+      以下情境來自實務勞檢案例與申訴紀錄，每一種都已有主管因此受到調查。<strong>「不知道」不是免責理由。</strong>
+    </div>
+
+    <div class="red-zone-grid">
+      <div class="red-zone-card">
+        <div class="rz-situation">
+          <div class="rz-icon">📋</div>
+          <div class="rz-label">員工請產檢假</div>
+        </div>
+        <div class="rz-wrong">
+          <div class="rz-col-label">❌ 錯誤做法</div>
+          <div class="rz-text">「妳先請特休，產檢假留著之後使用」</div>
+          <div class="rz-risk">→ 違反性平法第15條；勞基法第38條特休為勞工自行安排之權益</div>
+        </div>
+        <div class="rz-right">
+          <div class="rz-col-label">✅ 正確做法</div>
+          <div class="rz-text">依法受理產檢假；若需排程協調，僅能就工作交接協調，不得改假</div>
+        </div>
+      </div>
+
+      <div class="red-zone-card">
+        <div class="rz-situation">
+          <div class="rz-icon">⚠️</div>
+          <div class="rz-label">員工懷孕工作吃重</div>
+        </div>
+        <div class="rz-wrong">
+          <div class="rz-col-label">❌ 錯誤做法</div>
+          <div class="rz-text">仍安排久站、搬重物、夜間工作且未做評估</div>
+          <div class="rz-risk">→ 涉及勞基法第49、51條及職安法母性健康保護義務</div>
+        </div>
+        <div class="rz-right">
+          <div class="rz-col-label">✅ 正確做法</div>
+          <div class="rz-text">立即與人資／職安窗口評估工作調整、健康保護與替代安排</div>
+        </div>
+      </div>
+
+      <div class="red-zone-card">
+        <div class="rz-situation">
+          <div class="rz-icon">🗣️</div>
+          <div class="rz-label">員工請安胎或育嬰留停</div>
+        </div>
+        <div class="rz-wrong">
+          <div class="rz-col-label">❌ 錯誤做法</div>
+          <div class="rz-text">「這樣以後升遷很難」「部門不會再把重要工作給妳」</div>
+          <div class="rz-risk">→ 可能構成不利處分、差別待遇，形成申訴或勞檢事證</div>
+        </div>
+        <div class="rz-right">
+          <div class="rz-col-label">✅ 正確做法</div>
+          <div class="rz-text">停止帶有懲罰意味之表述，改以制度與職務安排角度處理</div>
+        </div>
+      </div>
+
+      <div class="red-zone-card">
+        <div class="rz-situation">
+          <div class="rz-icon">👥</div>
+          <div class="rz-label">部門缺人壓力</div>
+        </div>
+        <div class="rz-wrong">
+          <div class="rz-col-label">❌ 錯誤做法</div>
+          <div class="rz-text">以人力不足為由拒絕陪產檢及陪產假</div>
+          <div class="rz-risk">→ 違反性平法第15、21條</div>
+        </div>
+        <div class="rz-right">
+          <div class="rz-col-label">✅ 正確做法</div>
+          <div class="rz-text">先核准法定權利，再由主管處理代理與資源調度</div>
+        </div>
+      </div>
+
+      <div class="red-zone-card">
+        <div class="rz-situation">
+          <div class="rz-icon">🔍</div>
+          <div class="rz-label">面試或留任溝通</div>
+        </div>
+        <div class="rz-wrong">
+          <div class="rz-col-label">❌ 錯誤做法</div>
+          <div class="rz-text">詢問求職者是否打算懷孕、生小孩</div>
+          <div class="rz-risk">→ 就業歧視風險，涉就服法第5條；任用後差別對待亦涉性平法</div>
+        </div>
+        <div class="rz-right">
+          <div class="rz-col-label">✅ 正確做法</div>
+          <div class="rz-text">聚焦職務能力與工作條件，完全不問生育計畫</div>
+        </div>
+      </div>
+
+      <div class="red-zone-card">
+        <div class="rz-situation">
+          <div class="rz-icon">🔄</div>
+          <div class="rz-label">復職管理</div>
+        </div>
+        <div class="rz-wrong">
+          <div class="rz-col-label">❌ 錯誤做法</div>
+          <div class="rz-text">育嬰留停回來後立即調離原職、降薪、邊緣化</div>
+          <div class="rz-risk">→ 違反復職保護原則，並有解僱／逼退風險</div>
+        </div>
+        <div class="rz-right">
+          <div class="rz-col-label">✅ 正確做法</div>
+          <div class="rz-text">《性別工作平等法》明定，受僱者依法申請育嬰留職停薪，於育嬰留職停薪期滿後，雇主應讓受僱者回復申請育嬰留職停薪時之原有工作，若有組織調整須有正當理由並雙方充分溝通後才可調整職務</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P4 bottom summary strip -->
+    <div style="margin-top:20px;background:linear-gradient(135deg,#1B5E8A,#2E86AB);border-radius:10px;padding:16px 24px;display:flex;align-items:center;gap:20px;">
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" style="flex-shrink:0;">
+        <circle cx="28" cy="28" r="26" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+        <path d="M18 28l7 7 13-13" stroke="#F4C842" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px;">遇到以上任何情況，請先暫停，聯繫人資確認正確做法</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,0.75);">法令保障是底線，而不是選項。「我不知道」不是主管的護盾，正確行動才是。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">懷孕育兒權益保障 · 管理現場實務指引 · 2026.04</div>
+    <div class="footer-tag">P 4</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE 5: 五、母性保護 ＋ 六、處理流程
+══════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-head teal">
+    <div>
+      <div class="section-num">SECTION 05</div>
+      <div class="section-title">🛡️ 女性保護、母性健康保護與職場不法侵害</div>
+    </div>
+  </div>
+
+  <div class="content-sm">
+    <h3 class="sub">（一）母性健康保護——雇主的主動義務，不是「看著辦」</h3>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:10px 0 14px;">
+      <div style="background:var(--pale);border-radius:10px;padding:16px;text-align:center;border-top:3px solid var(--teal);">
+        <div style="font-size:28px;margin-bottom:8px;">🔍</div>
+        <div style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:6px;">危害辨識</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.5;">評估工作環境中對妊娠員工的潛在危險因子</div>
+      </div>
+      <div style="background:var(--pale);border-radius:10px;padding:16px;text-align:center;border-top:3px solid var(--teal);">
+        <div style="font-size:28px;margin-bottom:8px;">🩺</div>
+        <div style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:6px;">健康評估</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.5;">配合人資及臨場醫護專業窗口來進行適性評估，非主管單獨判斷</div>
+      </div>
+      <div style="background:var(--pale);border-radius:10px;padding:16px;text-align:center;border-top:3px solid var(--teal);">
+        <div style="font-size:28px;margin-bottom:8px;">🔄</div>
+        <div style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:6px;">工作調整</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.5;">有較輕易工作可改調時，雇主不得拒絕且不得減薪</div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <div class="warning-icon">⚠️</div>
+      <div class="warning-text">
+        <strong>不能使妊娠中之女性勞工</strong>從事特定危險性或有害性工作。若員工提出身體不適、醫囑建議或工作負荷異常，主管應立即啟動人資／職安協作，不可只用「大家都很忙」帶過。
+      </div>
+    </div>
+
+    <h3 class="sub">（二）職場霸凌與不法侵害——新法公布，現在就要做</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0;">
+      <div class="callout red">
+        <strong>🔴 不能等新專章生效才做</strong><br>
+        現行職安法下的不法侵害預防義務已存在。勞檢會直接檢視企業是否有相關措施。
+      </div>
+      <div class="callout teal">
+        <strong>🟢 我們已經在做</strong><br>
+        已成立申訴管道、保護通報者、避免報復、處理主管言語或管理方式造成之身心危害。
+      </div>
+    </div>
+
+    <div style="height:1px;background:var(--border);margin:14px 0;"></div>
+
+    <!-- Section 6 -->
+    <div style="margin-bottom:10px;padding-top:4px;">
+      <div style="font-size:10px;letter-spacing:0.15em;color:var(--muted);margin-bottom:3px;font-weight:600;text-transform:uppercase;">SECTION 06</div>
+      <div style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;">📝 主管收到申請時的標準處理流程（SOP）</div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-illo">
+          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="20" fill="#EBF4F9" stroke="#BDD7EE" stroke-width="1.5"/>
+            <path d="M14 22h16M22 14v16" stroke="#2E86AB" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="step-content">
+          <div class="step-title">先辨識假別</div>
+          <div class="step-desc">員工申請的是哪一種法定權利？<strong>不要自行把法定假別改成特休、病假或其他名目</strong>。遇到不確定的，先問人資，不要自行駁回。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-illo">
+          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="20" fill="#EBF4F9" stroke="#BDD7EE" stroke-width="1.5"/>
+            <path d="M15 22l5 5 9-9" stroke="#1B8A7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="step-content">
+          <div class="step-title">先支持，再安排</div>
+          <div class="step-desc">先確認權利可依法行使，再處理交接、代理、排程。<strong>順序不能反過來</strong>——不是「安排好了才核准」。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-illo">
+          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="20" fill="#EBF4F9" stroke="#BDD7EE" stroke-width="1.5"/>
+            <rect x="14" y="14" width="16" height="20" rx="2" stroke="#2E86AB" stroke-width="1.5"/>
+            <line x1="18" y1="20" x2="26" y2="20" stroke="#2E86AB" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="18" y1="25" x2="26" y2="25" stroke="#2E86AB" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="step-content">
+          <div class="step-title">立即留痕</div>
+          <div class="step-desc">申請內容、核准情形、工作調整、交接安排都要留下書面紀錄。<strong>避免口頭處理後各說各話</strong>，這也是保護主管自己。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-illo">
+          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="20" fill="#FEF5E7" stroke="#F5CBA7" stroke-width="1.5"/>
+            <path d="M22 14v10l6 4" stroke="#E67E22" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="step-content">
+          <div class="step-title">健康風險立即升級處理</div>
+          <div class="step-desc">如安胎、久站、搬重、夜班、醫囑限制等，<strong>應同步通知人資與職安窗口</strong>，不可由主管單獨處理。</div>
+        </div>
+      </div>
+      <div class="step danger">
+        <div class="step-num">5</div>
+        <div class="step-illo">
+          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="20" fill="#FDEDEC" stroke="#F1948A" stroke-width="1.5"/>
+            <path d="M16 16l12 12M28 16L16 28" stroke="#C0392B" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="step-content">
+          <div class="step-title">絕對避免不當評語</div>
+          <div class="step-desc">不得出現「妳這樣會影響部門」「以後升遷會受影響」等言語。<strong>這些話一旦說出口，就可能成為申訴或勞檢的事證</strong>。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-illo">
+          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="20" fill="#EBF4F9" stroke="#BDD7EE" stroke-width="1.5"/>
+            <path d="M14 30c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#2E86AB" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="22" cy="18" r="4" stroke="#2E86AB" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="step-content">
+          <div class="step-title">復職要有銜接期</div>
+          <div class="step-desc">員工產後或育嬰留停復職，主管應安排工作銜接、制度更新說明與<strong>合理適應期</strong>，不能第一天回來就全速壓績效。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">懷孕育兒權益保障 · 管理現場實務指引 · 2026.04</div>
+    <div class="footer-tag">P 5</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE 6: 七 + 八
+══════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-head amber">
+    <div>
+      <div class="section-num">SECTION 07</div>
+      <div class="section-title">🌱 少子化數據與企業 ESG 責任</div>
+    </div>
+  </div>
+
+  <div class="content-sm">
+    <div class="section-intro">
+      少子化不是單一家庭問題，而是企業人力、國家人口結構與社會永續問題。以下數據說明為什麼友善育兒政策是企業競爭力的一部分。
+    </div>
+
+    <!-- Big data highlights -->
+    <div class="esg-grid">
+      <div class="esg-card">
+        <div class="esg-icon">👶</div>
+        <div class="esg-num">134,769</div>
+        <div class="esg-label">113年新生兒人數（人）<br>持續位於歷年低檔</div>
+      </div>
+      <div class="esg-card g2">
+        <div class="esg-icon">📉</div>
+        <div class="esg-num">−920萬</div>
+        <div class="esg-label">2024→2070年<br>青壯年勞動人口減少</div>
+      </div>
+      <div class="esg-card g3">
+        <div class="esg-icon">🏘️</div>
+        <div class="esg-num">1,497萬</div>
+        <div class="esg-label">預估2070年<br>臺灣總人口（人）</div>
+      </div>
+      <div class="esg-card g4">
+        <div class="esg-icon">👴</div>
+        <div class="esg-num">2025</div>
+        <div class="esg-label">臺灣進入<br>超高齡社會年份</div>
+      </div>
+    </div>
+
+    <!-- Charts row -->
+    <div class="chart-row">
+      <!-- Bar chart: population projection -->
+      <div class="chart-box">
+        <div class="chart-title">📊 臺灣總人口推估趨勢（萬人）</div>
+        <div class="bar-chart">
+          <div class="bar-item">
+            <div class="bar-label"><span>2024年</span><span class="val">2,340萬</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--sky);"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label"><span>2030年</span><span class="val">2,280萬</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:97%;background:var(--sky);"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label"><span>2040年</span><span class="val">2,150萬</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:92%;background:var(--teal);"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label"><span>2050年</span><span class="val">1,980萬</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--amber);"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label"><span>2070年</span><span class="val">1,497萬</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:64%;background:var(--red);"></div></div>
+          </div>
+        </div>
+        <div style="font-size:10px;color:var(--muted);margin-top:12px;">資料來源：國發會人口推估（2024年版）</div>
+      </div>
+
+      <!-- Donut: ESG S impact -->
+      <div class="chart-box">
+        <div class="chart-title">📌 企業友善育兒政策的 ESG 影響面向</div>
+        <div class="donut-wrap">
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <!-- Donut segments -->
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#EBF4F9" stroke-width="16"/>
+            <!-- Segment 1: 35% -->
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#2E86AB" stroke-width="16"
+              stroke-dasharray="83.5 155.6" stroke-dashoffset="155.6" transform="rotate(-90 50 50)"/>
+            <!-- Segment 2: 28% -->
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#1B8A7A" stroke-width="16"
+              stroke-dasharray="66.8 155.6" stroke-dashoffset="72.1" transform="rotate(-90 50 50)"/>
+            <!-- Segment 3: 22% -->
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#E67E22" stroke-width="16"
+              stroke-dasharray="52.4 155.6" stroke-dashoffset="5.3" transform="rotate(-90 50 50)"/>
+            <!-- Segment 4: 15% -->
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#C0392B" stroke-width="16"
+              stroke-dasharray="35.8 155.6" stroke-dashoffset="-47.1" transform="rotate(-90 50 50)"/>
+            <text x="50" y="54" text-anchor="middle" font-size="11" font-weight="700" fill="#1C2B3A">ESG · S</text>
+          </svg>
+          <div class="donut-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:var(--sky);"></div>留才穩定<div class="legend-val">35%</div></div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--teal);"></div>雇主品牌<div class="legend-val">28%</div></div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--amber);"></div>法規遵循<div class="legend-val">22%</div></div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--red);"></div>招募效益<div class="legend-val">15%</div></div>
+          </div>
+        </div>
+        <div style="font-size:10px;color:var(--muted);margin-top:12px;">友善育兒政策對企業 S（Social）面向的效益分佈示意</div>
+      </div>
+    </div>
+
+    <!-- Birth rate line chart -->
+    <div class="chart-box" style="margin:16px 0;">
+      <div class="chart-title">📉 近10年臺灣出生人數急速下降（單位：萬人）</div>
+      <div style="position:relative;width:100%;height:160px;">
+        <svg viewBox="0 0 740 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+          <!-- Grid lines -->
+          <line x1="60" y1="10" x2="60" y2="130" stroke="#E0ECF4" stroke-width="1"/>
+          <line x1="60" y1="130" x2="720" y2="130" stroke="#E0ECF4" stroke-width="1"/>
+          <line x1="60" y1="10" x2="720" y2="10" stroke="#E0ECF4" stroke-width="0.5" stroke-dasharray="4,3"/>
+          <line x1="60" y1="50" x2="720" y2="50" stroke="#E0ECF4" stroke-width="0.5" stroke-dasharray="4,3"/>
+          <line x1="60" y1="90" x2="720" y2="90" stroke="#E0ECF4" stroke-width="0.5" stroke-dasharray="4,3"/>
+          <!-- Y axis labels -->
+          <text x="50" y="14" text-anchor="end" font-size="10" fill="#8FA3B1">25萬</text>
+          <text x="50" y="54" text-anchor="end" font-size="10" fill="#8FA3B1">20萬</text>
+          <text x="50" y="94" text-anchor="end" font-size="10" fill="#8FA3B1">15萬</text>
+          <text x="50" y="134" text-anchor="end" font-size="10" fill="#8FA3B1">10萬</text>
+          <!-- Data: 2015=21.3, 2016=20.8, 2017=19.4, 2018=18.2, 2019=17.8, 2020=16.5, 2021=15.4, 2022=13.9, 2023=13.5, 2024=13.5萬 -->
+          <!-- Scale: y=10 at 25萬, y=130 at 10萬. Range=15萬, px=120. Per萬=8px. x: 60 to 720, 10 years, step=72px -->
+          <!-- y = 10 + (25 - val) * 8 -->
+          <!-- 21.3→41.6, 20.8→45.6, 19.4→57.2, 18.2→67.6, 17.8→71.6, 16.5→83, 15.4→92.8, 13.9→105.2, 13.5→108.8, 13.5→108.8 -->
+          <!-- Filled area -->
+          <path d="M60,41.6 L132,45.6 L204,57.2 L276,67.6 L348,71.6 L420,83 L492,92.8 L564,105.2 L636,108.8 L708,108.8 L708,130 L60,130 Z"
+            fill="rgba(192,57,43,0.08)"/>
+          <!-- Line -->
+          <polyline points="60,41.6 132,45.6 204,57.2 276,67.6 348,71.6 420,83 492,92.8 564,105.2 636,108.8 708,108.8"
+            fill="none" stroke="#C0392B" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <!-- Dots -->
+          <circle cx="60" cy="41.6" r="4" fill="#C0392B"/>
+          <circle cx="132" cy="45.6" r="4" fill="#C0392B"/>
+          <circle cx="204" cy="57.2" r="4" fill="#C0392B"/>
+          <circle cx="276" cy="67.6" r="4" fill="#C0392B"/>
+          <circle cx="348" cy="71.6" r="4" fill="#C0392B"/>
+          <circle cx="420" cy="83" r="4" fill="#C0392B"/>
+          <circle cx="492" cy="92.8" r="4" fill="#C0392B"/>
+          <circle cx="564" cy="105.2" r="4" fill="#C0392B"/>
+          <circle cx="636" cy="108.8" r="4" fill="#C0392B"/>
+          <circle cx="708" cy="108.8" r="4.5" fill="#C0392B" stroke="white" stroke-width="1.5"/>
+          <!-- Value labels -->
+          <text x="60" y="35" text-anchor="middle" font-size="9.5" fill="#C0392B" font-weight="600">21.3</text>
+          <text x="204" y="51" text-anchor="middle" font-size="9.5" fill="#8FA3B1">19.4</text>
+          <text x="420" y="77" text-anchor="middle" font-size="9.5" fill="#8FA3B1">16.5</text>
+          <text x="564" y="99" text-anchor="middle" font-size="9.5" fill="#8FA3B1">13.9</text>
+          <text x="708" y="102" text-anchor="middle" font-size="9.5" fill="#C0392B" font-weight="700">13.5</text>
+          <!-- X axis labels -->
+          <text x="60" y="145" text-anchor="middle" font-size="9.5" fill="#8FA3B1">2015</text>
+          <text x="132" y="145" text-anchor="middle" font-size="9.5" fill="#8FA3B1">2016</text>
+          <text x="204" y="145" text-anchor="middle" font-size="9.5" fill="#8FA3B1">2017</text>
+          <text x="276" y="145" text-anchor="middle" font-size="9.5" fill="#8FA3B1">2018</text>
+          <text x="348" y="145" text-anchor="middle" font-size="9.5" fill="#8FA3B1">2019</text>
+          <text x="420" y="145" text-anchor="middle" font-size="9.5" fill="#8FA3B1">2020</text>
+          <text x="492" y="145" text-anchor="middle" font-size="9.5" fill="#8FA3B1">2021</text>
+          <text x="564" y="145" text-anchor="middle" font-size="9.5" fill="#8FA3B1">2022</text>
+          <text x="636" y="145" text-anchor="middle" font-size="9.5" fill="#8FA3B1">2023</text>
+          <text x="708" y="145" text-anchor="middle" font-size="9.5" fill="#C0392B" font-weight="600">2024</text>
+          <!-- Annotation -->
+          <rect x="490" y="12" width="158" height="28" rx="4" fill="rgba(192,57,43,0.1)" stroke="rgba(192,57,43,0.3)" stroke-width="1"/>
+          <text x="500" y="23" font-size="9.5" fill="#C0392B" font-weight="700">↘ 10年內減少約 36%</text>
+          <text x="500" y="35" font-size="9" fill="#922B21">21.3萬 → 13.5萬</text>
+        </svg>
+      </div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px;">資料來源：內政部戶政司出生統計（2015–2024年）</div>
+    </div>
+
+    <div class="callout amber">
+      <strong>對管理階層而言</strong>，支持懷孕與育兒員工，不是「對特定族群的偏袒」，而是回應現實社會變化、法令要求與人才競爭的<strong>現代管理基本能力</strong>。
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">懷孕育兒權益保障 · 管理現場實務指引 · 2026.04</div>
+    <div class="footer-tag">P 6</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE 7: 八、公司現有福利政策
+══════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-head" style="background:linear-gradient(90deg,#0B4D43,var(--teal));">
+    <div>
+      <div class="section-num">SECTION 08</div>
+      <div class="section-title">🏢 公司現有福利政策（優於法令）</div>
+    </div>
+    <div class="section-icon">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.5">
+        <rect x="6" y="20" width="36" height="22" rx="3"/>
+        <path d="M16 20v-6a8 8 0 0 1 16 0v6"/>
+        <circle cx="24" cy="31" r="3" fill="white" stroke="none"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <!-- Welfare intro illustration -->
+    <div style="display:flex;align-items:center;gap:32px;margin-bottom:28px;padding:20px 24px;background:var(--light);border-radius:12px;">
+      <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+        <!-- House -->
+        <path d="M20 55 L50 25 L80 55" fill="none" stroke="#1B5E8A" stroke-width="3" stroke-linejoin="round"/>
+        <rect x="25" y="55" width="50" height="30" rx="2" fill="#EBF4F9" stroke="#1B5E8A" stroke-width="2"/>
+        <!-- Door -->
+        <rect x="42" y="68" width="16" height="17" rx="2" fill="#1B8A7A"/>
+        <!-- Window left -->
+        <rect x="29" y="62" width="10" height="10" rx="1" fill="#F4A261" opacity="0.8"/>
+        <!-- Window right -->
+        <rect x="61" y="62" width="10" height="10" rx="1" fill="#F4A261" opacity="0.8"/>
+        <!-- Heart -->
+        <path d="M50 22 C50 19 47 16 44 19 C41 22 44 27 50 31 C56 27 59 22 56 19 C53 16 50 19 50 22Z" fill="#E67E22"/>
+        <!-- Person left -->
+        <circle cx="14" cy="72" r="6" fill="#2E86AB"/>
+        <path d="M8 88 C8 82 11 80 14 80 C17 80 20 82 20 88" fill="#2E86AB"/>
+        <!-- Person right -->
+        <circle cx="86" cy="72" r="6" fill="#2E86AB"/>
+        <path d="M80 88 C80 82 83 80 86 80 C89 80 92 82 92 88" fill="#2E86AB"/>
+        <!-- Stars -->
+        <text x="2" y="55" font-size="10">✨</text>
+        <text x="85" y="50" font-size="10">✨</text>
+      </svg>
+      <div>
+        <div style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;">公司友善育兒承諾</div>
+        <div style="font-size:12.5px;color:var(--muted);line-height:1.7;">除法定保障外，公司進一步提供優於法令的福利措施，<br>以實際行動支持員工於育兒階段兼顧工作與家庭。</div>
+      </div>
+    </div>
+
+    <div class="welfare-grid">
+      <div class="welfare-card blue">
+        <span class="welfare-card-icon">⏰</span>
+        <div class="welfare-card-title">彈性育兒工時支持</div>
+        <div class="welfare-card-desc">
+          法令規定撫育未滿 <strong>3歲</strong>子女可減少工時。<br>
+          公司進一步擴大至育有<br><strong>0–12 歲子女（至國小畢業）</strong>，<br>每日可減少工作時間 1 小時。
+        </div>
+        <div class="welfare-highlight">📌 照常給薪 · 適用內勤打卡制員工</div>
+      </div>
+      <div class="welfare-card amber-c">
+        <span class="welfare-card-icon">💰</span>
+        <div class="welfare-card-title">育兒托兒津貼補助</div>
+        <div class="welfare-card-desc">
+          育有 <strong>0–12 歲子女</strong>之員工，<br>
+          可申請托兒津貼補助。<br>
+          每位子女每月補助<br>
+          發放至<strong>國小畢業當月</strong>止。
+        </div>
+        <div class="welfare-highlight">💵 每位子女每月 NT$1,000</div>
+      </div>
+    </div>
+
+    <!-- Comparison: law vs company -->
+    <div style="margin-top:20px;">
+      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:10px;letter-spacing:0.04em;">📋 法令 vs 公司實際提供</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div style="border:1.5px solid var(--border);border-radius:10px;overflow:hidden;">
+          <div style="background:#F0F4F8;padding:8px 14px;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.06em;">⚖️ 法令最低標準</div>
+          <div style="padding:12px 14px;">
+            <div style="font-size:12px;color:var(--ink);line-height:1.75;">
+              ✦ 撫育未滿 <strong>3歲</strong>子女可減少工時<br>
+              ✦ 減少工時部分<strong>不給薪</strong><br>
+              ✦ 無托兒津貼強制規定
+            </div>
+          </div>
+        </div>
+        <div style="border:1.5px solid var(--teal);border-radius:10px;overflow:hidden;">
+          <div style="background:var(--pale);padding:8px 14px;font-size:11px;font-weight:700;color:var(--teal);letter-spacing:0.06em;">🏆 公司實際提供（優於法令）</div>
+          <div style="padding:12px 14px;">
+            <div style="font-size:12px;color:var(--ink);line-height:1.75;">
+              ✦ 擴大至 <strong>0–12 歲</strong>子女（國小畢業前）<br>
+              ✦ 減少工時<strong>照常給薪</strong><br>
+              ✦ 每位子女每月 <strong>NT$1,000</strong> 托兒津貼
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- How to apply section -->
+    <div style="margin-top:20px;background:var(--light);border-radius:10px;padding:18px 20px;">
+      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:12px;">📌 如何申請公司福利？</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+        <div style="text-align:center;padding:12px 8px;background:white;border-radius:8px;border:1px solid var(--border);">
+          <div style="font-size:22px;margin-bottom:6px;">📝</div>
+          <div style="font-size:11.5px;font-weight:700;color:var(--navy);margin-bottom:4px;">Step 1</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.5;">填寫申請表單<br>（向人資部門索取）</div>
+        </div>
+        <div style="text-align:center;padding:12px 8px;background:white;border-radius:8px;border:1px solid var(--border);">
+          <div style="font-size:22px;margin-bottom:6px;">👤</div>
+          <div style="font-size:11.5px;font-weight:700;color:var(--navy);margin-bottom:4px;">Step 2</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.5;">檢附子女<br>出生證明文件</div>
+        </div>
+        <div style="text-align:center;padding:12px 8px;background:white;border-radius:8px;border:1px solid var(--border);">
+          <div style="font-size:22px;margin-bottom:6px;">✅</div>
+          <div style="font-size:11.5px;font-weight:700;color:var(--navy);margin-bottom:4px;">Step 3</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.5;">送交人資部門<br>審核後生效</div>
+        </div>
+      </div>
+      <div style="margin-top:12px;font-size:11.5px;color:var(--muted);text-align:center;">
+        如有疑問請洽人力資源部 傅柔安 Jennifer Fu　☎ (02) 2771-5525 #235
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">懷孕育兒權益保障 · 管理現場實務指引 · 2026.04</div>
+    <div class="footer-tag">P 7</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE 8: 九、結語
+══════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-head" style="background:linear-gradient(90deg,var(--navy),#1A5276);">
+    <div>
+      <div class="section-num">SECTION 09</div>
+      <div class="section-title">✅ 結語</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="conclusion-banner">
+      <p>
+        對公司而言，懷孕、分娩與育兒，不應被視為管理上的例外狀況或組織負擔，而是企業在人才經營過程中必須正視並承接的重要人生歷程。公司持續強化女性保護與育兒友善支持，並非僅為符合法令要求，更是基於<strong>永續經營、留才穩定、雇主品牌與組織責任</strong>所做出的管理選擇。
+        <br><br>
+        主管作為制度落地的第一線，應以一致、正確且具支持性的態度回應員工需求，避免因錯誤判斷或不當處理導致法律風險、勞資爭議及人才流失。<strong style="color:#F4C842;font-size:15px;line-height:2;display:block;margin-top:12px;letter-spacing:0.03em;">唯有當管理者真正理解並支持制度，友善職場承諾才會從文字規定，轉化為員工實際感受到的工作安全感與信任感。</strong>
+      </p>
+    </div>
+
+    <!-- Quick reminder cards -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0;">
+      <div style="background:var(--light);border-radius:10px;padding:16px;text-align:center;">
+        <div style="font-size:24px;margin-bottom:8px;">🛑</div>
+        <div style="font-size:12px;font-weight:700;color:var(--red);margin-bottom:6px;">不能做</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.55;">以工作需要否決法定假別、不當評語、差別對待</div>
+      </div>
+      <div style="background:var(--pale);border-radius:10px;padding:16px;text-align:center;">
+        <div style="font-size:24px;margin-bottom:8px;">✅</div>
+        <div style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:6px;">應該做</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.55;">先支持再安排、留痕、通報健康風險、銜接復職</div>
+      </div>
+      <div style="background:#FEF9F0;border-radius:10px;padding:16px;text-align:center;">
+        <div style="font-size:24px;margin-bottom:8px;">❓</div>
+        <div style="font-size:12px;font-weight:700;color:var(--amber);margin-bottom:6px;">不確定時</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.55;">先問人資，不要自行判斷，不要口頭回絕</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Management pledge visual -->
+    <div style="margin-bottom:24px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+      <div style="background:var(--light);border-radius:10px;padding:16px;text-align:center;border-top:3px solid var(--sky);">
+        <svg width="36" height="36" viewBox="0 0 44 44" fill="none" style="margin:0 auto 8px;">
+          <circle cx="22" cy="22" r="20" fill="#EBF4F9" stroke="#BDD7EE" stroke-width="1.5"/>
+          <path d="M14 22l6 6 10-10" stroke="#2E86AB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div style="font-size:12px;font-weight:700;color:var(--sky);margin-bottom:4px;">依法行事</div>
+        <div style="font-size:11px;color:var(--muted);line-height:1.5;">以正確的態度<br>回應每一個申請</div>
+      </div>
+      <div style="background:var(--pale);border-radius:10px;padding:16px;text-align:center;border-top:3px solid var(--teal);">
+        <svg width="36" height="36" viewBox="0 0 44 44" fill="none" style="margin:0 auto 8px;">
+          <circle cx="22" cy="22" r="20" fill="#F0FAF8" stroke="#A9D9CF" stroke-width="1.5"/>
+          <path d="M22 14v8l5 5" stroke="#1B8A7A" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="22" cy="22" r="8" stroke="#1B8A7A" stroke-width="1.5"/>
+        </svg>
+        <div style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:4px;">即時處理</div>
+        <div style="font-size:11px;color:var(--muted);line-height:1.5;">不拖延、不擱置<br>遇到不確定先問人資</div>
+      </div>
+      <div style="background:#FEF9F0;border-radius:10px;padding:16px;text-align:center;border-top:3px solid var(--amber);">
+        <svg width="36" height="36" viewBox="0 0 44 44" fill="none" style="margin:0 auto 8px;">
+          <circle cx="22" cy="22" r="20" fill="#FEF5E7" stroke="#F5CBA7" stroke-width="1.5"/>
+          <path d="M22 14c-4.4 0-8 3.6-8 8 0 3 1.7 5.7 4.2 7.1L22 30l3.8-0.9C28.3 27.7 30 25 30 22c0-4.4-3.6-8-8-8z" stroke="#E67E22" stroke-width="1.5"/>
+          <path d="M19 22l2 2 4-4" stroke="#E67E22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div style="font-size:12px;font-weight:700;color:var(--amber);margin-bottom:4px;">用心支持</div>
+        <div style="font-size:11px;color:var(--muted);line-height:1.5;">讓制度從文字<br>變成員工的安全感</div>
+      </div>
+    </div>
+
+    <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:16px;letter-spacing:0.05em;">📞 如有任何疑問，請聯繫</div>
+    <div style="background:linear-gradient(135deg,var(--navy),#1A5276);border-radius:12px;padding:24px 28px;display:flex;align-items:center;gap:28px;">
+      <div style="width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="white" stroke-width="1.5">
+          <circle cx="14" cy="10" r="5"/>
+          <path d="M5 26c0-4.97 4.03-9 9-9s9 4.03 9 9"/>
+        </svg>
+      </div>
+      <div style="flex:1;">
+        <div style="font-size:11px;letter-spacing:0.12em;color:rgba(255,255,255,0.55);margin-bottom:4px;text-transform:uppercase;">人力資源部</div>
+        <div style="font-size:18px;font-weight:700;color:white;margin-bottom:10px;">傅柔安 Jennifer Fu　<span style="font-size:13px;font-weight:400;opacity:0.75;">經理</span></div>
+        <div style="display:flex;gap:24px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.71 3.41 2 2 0 0 1 3.68 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.81-.81a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span style="font-size:13px;color:rgba(255,255,255,0.85);">(02) 2771-5525 #235</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span style="font-size:13px;color:rgba(255,255,255,0.85);">jennifer.fu@yungloonc.com.tw</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">懷孕育兒權益保障 · 管理現場實務指引 · 2026.04</div>
+    <div class="footer-tag">P 8</div>
+  </div>
+</div>
+
+</body>
+</html>
