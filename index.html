@@ -197,8 +197,8 @@
   }
 
   /* ── CONTENT ── */
-  .content { padding: 48px 64px; flex: 1; }
-  .content-sm { padding: 36px 64px; flex: 1; }
+  .content { padding: 48px 64px; flex: 1; overflow: hidden; }
+  .content-sm { padding: 36px 64px; flex: 1; overflow: hidden; }
 
   /* ── STAT CARDS ── */
   .stat-grid {
@@ -604,7 +604,7 @@
   /* ── PRINT ── */
   @media print {
     @page {
-      size: A4;
+      size: 900px 1272px;
       margin: 0;
     }
     * {
@@ -615,11 +615,11 @@
       background: white;
       margin: 0;
       padding: 0;
-      width: 794px;
+      width: 900px;
     }
     .page {
-      width: 794px;
-      height: 1123px;
+      width: 900px;
+      height: 1272px;
       margin: 0;
       box-shadow: none;
       border-radius: 0;
@@ -633,11 +633,11 @@
       page-break-after: avoid;
       break-after: avoid;
     }
-    .cover { padding: 28px 42px 24px; flex-shrink: 0; }
-    .section-head { padding: 14px 42px; flex-shrink: 0; }
-    .content { padding: 20px 42px; flex: 1; overflow: hidden; }
-    .content-sm { padding: 14px 42px; flex: 1; overflow: hidden; }
-    .page-footer { padding: 10px 42px; flex-shrink: 0; margin-top: auto; }
+    .cover { padding: 48px 64px 44px; flex-shrink: 0; }
+    .section-head { padding: 18px 64px; flex-shrink: 0; }
+    .content { padding: 28px 64px; flex: 1; overflow: hidden; }
+    .content-sm { padding: 20px 64px; flex: 1; overflow: hidden; }
+    .page-footer { padding: 14px 64px; flex-shrink: 0; margin-top: auto; }
     .stat-grid { margin-bottom: 12px; }
     .stat-card { padding: 12px 10px; }
     .stat-num { font-size: 22px; }
@@ -680,6 +680,12 @@
     .step { page-break-inside: avoid; break-inside: avoid; }
     .welfare-card { page-break-inside: avoid; break-inside: avoid; }
     .chart-box { page-break-inside: avoid; break-inside: avoid; }
+    /* Force content areas to fill available space */
+    .content, .content-sm {
+      display: flex !important;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
   }
 
   /* ── TOC ── */
@@ -758,38 +764,6 @@
         </div>
       </div>
 
-      <!-- Cover Illustration -->
-      <div class="cover-illo">
-        <svg width="200" height="240" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Building / workplace -->
-          <rect x="30" y="80" width="140" height="130" rx="6" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
-          <!-- Windows -->
-          <rect x="48" y="96" width="28" height="20" rx="3" fill="rgba(243,156,18,0.5)"/>
-          <rect x="86" y="96" width="28" height="20" rx="3" fill="rgba(255,255,255,0.15)"/>
-          <rect x="124" y="96" width="28" height="20" rx="3" fill="rgba(255,255,255,0.15)"/>
-          <rect x="48" y="128" width="28" height="20" rx="3" fill="rgba(255,255,255,0.15)"/>
-          <rect x="86" y="128" width="28" height="20" rx="3" fill="rgba(243,156,18,0.5)"/>
-          <rect x="124" y="128" width="28" height="20" rx="3" fill="rgba(255,255,255,0.15)"/>
-          <!-- Door -->
-          <rect x="82" y="168" width="36" height="42" rx="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
-          <!-- Person 1: pregnant -->
-          <circle cx="68" cy="50" r="12" fill="rgba(255,255,255,0.9)"/>
-          <ellipse cx="68" cy="68" rx="10" ry="13" fill="rgba(255,255,255,0.7)"/>
-          <ellipse cx="68" cy="74" rx="7" ry="6" fill="rgba(243,156,18,0.6)"/>
-          <!-- Person 2: manager -->
-          <circle cx="132" cy="50" r="12" fill="rgba(255,255,255,0.9)"/>
-          <rect x="122" y="64" width="20" height="18" rx="4" fill="rgba(46,134,171,0.7)"/>
-          <!-- Heart/care symbol between them -->
-          <path d="M100 58 C100 53, 95 48, 90 53 C85 58, 90 66, 100 72 C110 66, 115 58, 110 53 C105 48, 100 53, 100 58Z" fill="rgba(243,156,18,0.8)"/>
-          <!-- Shield -->
-          <path d="M100 18 L114 24 L114 36 C114 44 107 50 100 53 C93 50 86 44 86 36 L86 24 Z" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
-          <path d="M95 36 L99 40 L107 32" stroke="rgba(243,156,18,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- Decorative circles -->
-          <circle cx="22" cy="150" r="6" fill="rgba(243,156,18,0.2)" stroke="rgba(243,156,18,0.4)" stroke-width="1"/>
-          <circle cx="178" cy="100" r="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-          <circle cx="14" cy="200" r="3" fill="rgba(255,255,255,0.1)"/>
-        </svg>
-      </div>
     </div>
 
     <div class="cover-stats">
@@ -823,11 +797,13 @@
       <div class="toc-item"><span class="toc-num">二</span><span class="toc-name">主管必須先建立的四個觀念</span><span class="toc-dots"></span><span class="toc-page">P2</span></div>
       <div class="toc-item"><span class="toc-num">三</span><span class="toc-name">法定權益與主管管理重點</span><span class="toc-dots"></span><span class="toc-page">P3</span></div>
       <div class="toc-item"><span class="toc-num">四</span><span class="toc-name">紅色警戒區：主管最容易踩線的違法情境</span><span class="toc-dots"></span><span class="toc-page">P4</span></div>
-      <div class="toc-item"><span class="toc-num">五</span><span class="toc-name">女性保護、母性健康保護與職場不法侵害</span><span class="toc-dots"></span><span class="toc-page">P5</span></div>
-      <div class="toc-item"><span class="toc-num">六</span><span class="toc-name">主管收到申請時的標準處理流程</span><span class="toc-dots"></span><span class="toc-page">P5</span></div>
-      <div class="toc-item"><span class="toc-num">七</span><span class="toc-name">少子化數據與企業 ESG 責任</span><span class="toc-dots"></span><span class="toc-page">P6</span></div>
-      <div class="toc-item"><span class="toc-num">八</span><span class="toc-name">公司現有福利政策</span><span class="toc-dots"></span><span class="toc-page">P7</span></div>
-      <div class="toc-item"><span class="toc-num">九</span><span class="toc-name">結語</span><span class="toc-dots"></span><span class="toc-page">P8</span></div>
+      <div class="toc-item"><span class="toc-num">五</span><span class="toc-name">女性保護、母性健康保護與職場不法侵害</span><span class="toc-dots"></span><span class="toc-page">P6</span></div>
+      <div class="toc-item"><span class="toc-num">六</span><span class="toc-name">主管收到申請時的標準處理流程</span><span class="toc-dots"></span><span class="toc-page">P6</span></div>
+      <div class="toc-item"><span class="toc-num">七</span><span class="toc-name">管理者必知：如何保護公司與自己不踩違法界線</span><span class="toc-dots"></span><span class="toc-page">P7</span></div>
+      <div class="toc-item"><span class="toc-num">八</span><span class="toc-name">留住人才：看臺灣勞動力結構數據變化談留才</span><span class="toc-dots"></span><span class="toc-page">P8</span></div>
+      <div class="toc-item"><span class="toc-num">九</span><span class="toc-name">ESG 視角：友善育兒政策對公司的長期價值</span><span class="toc-dots"></span><span class="toc-page">P9</span></div>
+      <div class="toc-item"><span class="toc-num">十</span><span class="toc-name">結語</span><span class="toc-dots"></span><span class="toc-page">P10</span></div>
+      <div class="toc-item"><span class="toc-num" style="font-size:10px;color:var(--muted);">附錄</span><span class="toc-name">假別規則說明一覽表</span><span class="toc-dots"></span><span class="toc-page">P11</span></div>
     </div>
   </div>
 
@@ -841,7 +817,7 @@
 <!-- ══════════════════════════════════════════════
      PAGE 2: 一 + 二
 ══════════════════════════════════════════════ -->
-<div class="page">
+<div class="page" style="justify-content:space-between;">
   <div class="section-head sky">
     <div>
       <div class="section-num">SECTION 01</div>
@@ -923,6 +899,29 @@
         </div>
         <div class="concept-box-body">再完整的制度，只要主管搞錯或故意淡化，員工就不敢用。制度有效，往往取決於<strong style="color:var(--navy)">主管的第一句回應</strong>。</div>
       </div>
+
+    <!-- P2 bottom fill: 三個行動提醒 -->
+    <div style="margin-top:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+      <div style="background:var(--light);border-radius:10px;padding:16px 14px;text-align:center;border-top:3px solid var(--sky);">
+        <div style="font-size:28px;margin-bottom:8px;">⚖️</div>
+        <div style="font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:6px;">法令是底線</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.6;">不是彈性空間，不能因業務調整而迴避</div>
+      </div>
+      <div style="background:var(--pale);border-radius:10px;padding:16px 14px;text-align:center;border-top:3px solid var(--teal);">
+        <div style="font-size:28px;margin-bottom:8px;">🗣️</div>
+        <div style="font-size:12.5px;font-weight:700;color:var(--teal);margin-bottom:6px;">言語也是證據</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.6;">日常對話中的不當評語都可能成為申訴事證</div>
+      </div>
+      <div style="background:#FEF9F0;border-radius:10px;padding:16px 14px;text-align:center;border-top:3px solid var(--amber);">
+        <div style="font-size:28px;margin-bottom:8px;">🤝</div>
+        <div style="font-size:12.5px;font-weight:700;color:var(--amber);margin-bottom:6px;">態度決定落地</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.6;">制度能否真正執行，取決於主管的第一句話</div>
+      </div>
+    </div>
+    <div style="margin-top:14px;background:linear-gradient(90deg,var(--navy),#1A5276);border-radius:10px;padding:14px 20px;display:flex;align-items:center;gap:14px;">
+      <span style="font-size:22px;">✅</span>
+      <div style="font-size:12.5px;color:white;line-height:1.7;">遇到不確定時，<strong style="color:#F4C842;">先問人資，不要自行判斷，不要口頭回絕。</strong>正確的第一步，是所有法令遵循的起點。</div>
+    </div>
     </div>
 
   </div>
@@ -1044,7 +1043,29 @@
     </table>
 
     <div class="callout" style="margin-top:20px;">
-      <strong>⚡ 育嬰留停新制（115年起）：</strong>可以「日」為單位彈性申請；少於6個月者，得以30日以上申請，並有次數限制。請確認人資已更新相關說明。
+      <strong>⚡ 育嬰留停新制（115年起）：</strong>育嬰留職停薪可以「日」為單位彈性申請。
+    </div>
+
+    <!-- P3 bottom fill: 兩個主管重要提示 -->
+    <div style="margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div style="background:#FDEDEC;border-radius:10px;padding:16px 18px;border-left:4px solid var(--red);">
+        <div style="font-size:12.5px;font-weight:700;color:var(--red);margin-bottom:8px;">🚫 主管絕對不能做的事</div>
+        <div style="font-size:12px;color:var(--ink);line-height:1.75;">
+          ✗ 要求改請特休或事假替代法定假<br>
+          ✗ 以業務繁忙為由拒絕申請<br>
+          ✗ 因請假影響考績或全勤獎金<br>
+          ✗ 口頭回絕而不進行正式處理
+        </div>
+      </div>
+      <div style="background:#EBF4F9;border-radius:10px;padding:16px 18px;border-left:4px solid var(--sky);">
+        <div style="font-size:12.5px;font-weight:700;color:var(--sky);margin-bottom:8px;">✅ 主管收到申請時的正確順序</div>
+        <div style="font-size:12px;color:var(--ink);line-height:1.75;">
+          ① 先確認假別類型，勿自行替換<br>
+          ② 核准後安排工作交接與代理<br>
+          ③ 留下書面紀錄，避免口頭處理<br>
+          ④ 不確定時，立即聯繫人資部
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1079,8 +1100,8 @@
         </div>
         <div class="rz-wrong">
           <div class="rz-col-label">❌ 錯誤做法</div>
-          <div class="rz-text">「妳先請特休，產檢假留著之後使用」</div>
-          <div class="rz-risk">→ 違反性平法第15條；勞基法第38條特休為勞工自行安排之權益</div>
+          <div class="rz-text">「妳先請特休，產檢假之後留著使用」</div>
+          <div style="font-size:11px;color:#7D3C00;margin-top:5px;background:#FEF5E7;border-radius:4px;padding:5px 8px;line-height:1.5;">💛 這句話的出發點，可能是主管希望幫部屬留著假期彈性使用的好意——但即使出於善意，這樣的安排仍違反了性平法第15條關於產檢假的規定：員工有權直接使用產檢假，雇主不得要求改請特休。特休是員工依勞基法第38條得自主安排的權利，二者不可替換。</div>
         </div>
         <div class="rz-right">
           <div class="rz-col-label">✅ 正確做法</div>
@@ -1170,14 +1191,17 @@
     </div>
 
     <!-- P4 bottom summary strip -->
-    <div style="margin-top:20px;background:linear-gradient(135deg,#1B5E8A,#2E86AB);border-radius:10px;padding:16px 24px;display:flex;align-items:center;gap:20px;">
-      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" style="flex-shrink:0;">
-        <circle cx="28" cy="28" r="26" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-        <path d="M18 28l7 7 13-13" stroke="#F4C842" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <div>
-        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px;">遇到以上任何情況，請先暫停，聯繫人資確認正確做法</div>
-        <div style="font-size:11.5px;color:rgba(255,255,255,0.75);">法令保障是底線，而不是選項。「我不知道」不是主管的護盾，正確行動才是。</div>
+    <div style="margin-top:20px;border:3px solid #E67E22;border-radius:12px;overflow:hidden;">
+      <div style="background:#E67E22;padding:10px 20px;display:flex;align-items:center;gap:10px;">
+        <span style="font-size:20px;">⚠️</span>
+        <div style="font-size:15px;font-weight:900;color:white;letter-spacing:0.04em;">遇到以上任何情況，請先暫停，聯繫人資確認正確做法</div>
+      </div>
+      <div style="background:#FEF5E7;padding:12px 20px;display:flex;align-items:center;gap:16px;">
+        <div style="font-size:32px;flex-shrink:0;">🛑</div>
+        <div style="font-size:13px;color:#7D3C00;line-height:1.75;font-weight:500;">
+          依法處理，是保護公司、也保護主管自己最有效的方式。<br>
+          <strong style="color:#C0392B;">每一次正確的回應，都是在為公司降低法律風險。</strong>
+        </div>
       </div>
     </div>
   </div>
@@ -1190,336 +1214,7 @@
 
 
 <!-- ══════════════════════════════════════════════
-     PAGE 5: 五、母性保護 ＋ 六、處理流程
-══════════════════════════════════════════════ -->
-<div class="page">
-  <div class="section-head teal">
-    <div>
-      <div class="section-num">SECTION 05</div>
-      <div class="section-title">🛡️ 女性保護、母性健康保護與職場不法侵害</div>
-    </div>
-  </div>
-
-  <div class="content-sm">
-    <h3 class="sub">（一）母性健康保護——雇主的主動義務，不是「看著辦」</h3>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:10px 0 14px;">
-      <div style="background:var(--pale);border-radius:10px;padding:16px;text-align:center;border-top:3px solid var(--teal);">
-        <div style="font-size:28px;margin-bottom:8px;">🔍</div>
-        <div style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:6px;">危害辨識</div>
-        <div style="font-size:11.5px;color:var(--muted);line-height:1.5;">評估工作環境中對妊娠員工的潛在危險因子</div>
-      </div>
-      <div style="background:var(--pale);border-radius:10px;padding:16px;text-align:center;border-top:3px solid var(--teal);">
-        <div style="font-size:28px;margin-bottom:8px;">🩺</div>
-        <div style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:6px;">健康評估</div>
-        <div style="font-size:11.5px;color:var(--muted);line-height:1.5;">配合人資及臨場醫護專業窗口來進行適性評估，非主管單獨判斷</div>
-      </div>
-      <div style="background:var(--pale);border-radius:10px;padding:16px;text-align:center;border-top:3px solid var(--teal);">
-        <div style="font-size:28px;margin-bottom:8px;">🔄</div>
-        <div style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:6px;">工作調整</div>
-        <div style="font-size:11.5px;color:var(--muted);line-height:1.5;">有較輕易工作可改調時，雇主不得拒絕且不得減薪</div>
-      </div>
-    </div>
-
-    <div class="warning-box">
-      <div class="warning-icon">⚠️</div>
-      <div class="warning-text">
-        <strong>不能使妊娠中之女性勞工</strong>從事特定危險性或有害性工作。若員工提出身體不適、醫囑建議或工作負荷異常，主管應立即啟動人資／職安協作，不可只用「大家都很忙」帶過。
-      </div>
-    </div>
-
-    <h3 class="sub">（二）職場霸凌與不法侵害——新法公布，現在就要做</h3>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0;">
-      <div class="callout red">
-        <strong>🔴 不能等新專章生效才做</strong><br>
-        現行職安法下的不法侵害預防義務已存在。勞檢會直接檢視企業是否有相關措施。
-      </div>
-      <div class="callout teal">
-        <strong>🟢 我們已經在做</strong><br>
-        已成立申訴管道、保護通報者、避免報復、處理主管言語或管理方式造成之身心危害。
-      </div>
-    </div>
-
-    <div style="height:1px;background:var(--border);margin:14px 0;"></div>
-
-    <!-- Section 6 -->
-    <div style="margin-bottom:10px;padding-top:4px;">
-      <div style="font-size:10px;letter-spacing:0.15em;color:var(--muted);margin-bottom:3px;font-weight:600;text-transform:uppercase;">SECTION 06</div>
-      <div style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;">📝 主管收到申請時的標準處理流程（SOP）</div>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-illo">
-          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
-            <circle cx="22" cy="22" r="20" fill="#EBF4F9" stroke="#BDD7EE" stroke-width="1.5"/>
-            <path d="M14 22h16M22 14v16" stroke="#2E86AB" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="step-content">
-          <div class="step-title">先辨識假別</div>
-          <div class="step-desc">員工申請的是哪一種法定權利？<strong>不要自行把法定假別改成特休、病假或其他名目</strong>。遇到不確定的，先問人資，不要自行駁回。</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-illo">
-          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
-            <circle cx="22" cy="22" r="20" fill="#EBF4F9" stroke="#BDD7EE" stroke-width="1.5"/>
-            <path d="M15 22l5 5 9-9" stroke="#1B8A7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="step-content">
-          <div class="step-title">先支持，再安排</div>
-          <div class="step-desc">先確認權利可依法行使，再處理交接、代理、排程。<strong>順序不能反過來</strong>——不是「安排好了才核准」。</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-illo">
-          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
-            <circle cx="22" cy="22" r="20" fill="#EBF4F9" stroke="#BDD7EE" stroke-width="1.5"/>
-            <rect x="14" y="14" width="16" height="20" rx="2" stroke="#2E86AB" stroke-width="1.5"/>
-            <line x1="18" y1="20" x2="26" y2="20" stroke="#2E86AB" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="18" y1="25" x2="26" y2="25" stroke="#2E86AB" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="step-content">
-          <div class="step-title">立即留痕</div>
-          <div class="step-desc">申請內容、核准情形、工作調整、交接安排都要留下書面紀錄。<strong>避免口頭處理後各說各話</strong>，這也是保護主管自己。</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-illo">
-          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
-            <circle cx="22" cy="22" r="20" fill="#FEF5E7" stroke="#F5CBA7" stroke-width="1.5"/>
-            <path d="M22 14v10l6 4" stroke="#E67E22" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="step-content">
-          <div class="step-title">健康風險立即升級處理</div>
-          <div class="step-desc">如安胎、久站、搬重、夜班、醫囑限制等，<strong>應同步通知人資與職安窗口</strong>，不可由主管單獨處理。</div>
-        </div>
-      </div>
-      <div class="step danger">
-        <div class="step-num">5</div>
-        <div class="step-illo">
-          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
-            <circle cx="22" cy="22" r="20" fill="#FDEDEC" stroke="#F1948A" stroke-width="1.5"/>
-            <path d="M16 16l12 12M28 16L16 28" stroke="#C0392B" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="step-content">
-          <div class="step-title">絕對避免不當評語</div>
-          <div class="step-desc">不得出現「妳這樣會影響部門」「以後升遷會受影響」等言語。<strong>這些話一旦說出口，就可能成為申訴或勞檢的事證</strong>。</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">6</div>
-        <div class="step-illo">
-          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
-            <circle cx="22" cy="22" r="20" fill="#EBF4F9" stroke="#BDD7EE" stroke-width="1.5"/>
-            <path d="M14 30c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#2E86AB" stroke-width="1.5" stroke-linecap="round"/>
-            <circle cx="22" cy="18" r="4" stroke="#2E86AB" stroke-width="1.5"/>
-          </svg>
-        </div>
-        <div class="step-content">
-          <div class="step-title">復職要有銜接期</div>
-          <div class="step-desc">員工產後或育嬰留停復職，主管應安排工作銜接、制度更新說明與<strong>合理適應期</strong>，不能第一天回來就全速壓績效。</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="page-footer">
-    <div class="footer-left">懷孕育兒權益保障 · 管理現場實務指引 · 2026.04</div>
-    <div class="footer-tag">P 5</div>
-  </div>
-</div>
-
-
-<!-- ══════════════════════════════════════════════
-     PAGE 6: 七 + 八
-══════════════════════════════════════════════ -->
-<div class="page">
-  <div class="section-head amber">
-    <div>
-      <div class="section-num">SECTION 07</div>
-      <div class="section-title">🌱 少子化數據與企業 ESG 責任</div>
-    </div>
-  </div>
-
-  <div class="content-sm">
-    <div class="section-intro">
-      少子化不是單一家庭問題，而是企業人力、國家人口結構與社會永續問題。以下數據說明為什麼友善育兒政策是企業競爭力的一部分。
-    </div>
-
-    <!-- Big data highlights -->
-    <div class="esg-grid">
-      <div class="esg-card">
-        <div class="esg-icon">👶</div>
-        <div class="esg-num">134,769</div>
-        <div class="esg-label">113年新生兒人數（人）<br>持續位於歷年低檔</div>
-      </div>
-      <div class="esg-card g2">
-        <div class="esg-icon">📉</div>
-        <div class="esg-num">−920萬</div>
-        <div class="esg-label">2024→2070年<br>青壯年勞動人口減少</div>
-      </div>
-      <div class="esg-card g3">
-        <div class="esg-icon">🏘️</div>
-        <div class="esg-num">1,497萬</div>
-        <div class="esg-label">預估2070年<br>臺灣總人口（人）</div>
-      </div>
-      <div class="esg-card g4">
-        <div class="esg-icon">👴</div>
-        <div class="esg-num">2025</div>
-        <div class="esg-label">臺灣進入<br>超高齡社會年份</div>
-      </div>
-    </div>
-
-    <!-- Charts row -->
-    <div class="chart-row">
-      <!-- Bar chart: population projection -->
-      <div class="chart-box">
-        <div class="chart-title">📊 臺灣總人口推估趨勢（萬人）</div>
-        <div class="bar-chart">
-          <div class="bar-item">
-            <div class="bar-label"><span>2024年</span><span class="val">2,340萬</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--sky);"></div></div>
-          </div>
-          <div class="bar-item">
-            <div class="bar-label"><span>2030年</span><span class="val">2,280萬</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:97%;background:var(--sky);"></div></div>
-          </div>
-          <div class="bar-item">
-            <div class="bar-label"><span>2040年</span><span class="val">2,150萬</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:92%;background:var(--teal);"></div></div>
-          </div>
-          <div class="bar-item">
-            <div class="bar-label"><span>2050年</span><span class="val">1,980萬</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--amber);"></div></div>
-          </div>
-          <div class="bar-item">
-            <div class="bar-label"><span>2070年</span><span class="val">1,497萬</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:64%;background:var(--red);"></div></div>
-          </div>
-        </div>
-        <div style="font-size:10px;color:var(--muted);margin-top:12px;">資料來源：國發會人口推估（2024年版）</div>
-      </div>
-
-      <!-- Donut: ESG S impact -->
-      <div class="chart-box">
-        <div class="chart-title">📌 企業友善育兒政策的 ESG 影響面向</div>
-        <div class="donut-wrap">
-          <svg width="100" height="100" viewBox="0 0 100 100">
-            <!-- Donut segments -->
-            <circle cx="50" cy="50" r="38" fill="none" stroke="#EBF4F9" stroke-width="16"/>
-            <!-- Segment 1: 35% -->
-            <circle cx="50" cy="50" r="38" fill="none" stroke="#2E86AB" stroke-width="16"
-              stroke-dasharray="83.5 155.6" stroke-dashoffset="155.6" transform="rotate(-90 50 50)"/>
-            <!-- Segment 2: 28% -->
-            <circle cx="50" cy="50" r="38" fill="none" stroke="#1B8A7A" stroke-width="16"
-              stroke-dasharray="66.8 155.6" stroke-dashoffset="72.1" transform="rotate(-90 50 50)"/>
-            <!-- Segment 3: 22% -->
-            <circle cx="50" cy="50" r="38" fill="none" stroke="#E67E22" stroke-width="16"
-              stroke-dasharray="52.4 155.6" stroke-dashoffset="5.3" transform="rotate(-90 50 50)"/>
-            <!-- Segment 4: 15% -->
-            <circle cx="50" cy="50" r="38" fill="none" stroke="#C0392B" stroke-width="16"
-              stroke-dasharray="35.8 155.6" stroke-dashoffset="-47.1" transform="rotate(-90 50 50)"/>
-            <text x="50" y="54" text-anchor="middle" font-size="11" font-weight="700" fill="#1C2B3A">ESG · S</text>
-          </svg>
-          <div class="donut-legend">
-            <div class="legend-item"><div class="legend-dot" style="background:var(--sky);"></div>留才穩定<div class="legend-val">35%</div></div>
-            <div class="legend-item"><div class="legend-dot" style="background:var(--teal);"></div>雇主品牌<div class="legend-val">28%</div></div>
-            <div class="legend-item"><div class="legend-dot" style="background:var(--amber);"></div>法規遵循<div class="legend-val">22%</div></div>
-            <div class="legend-item"><div class="legend-dot" style="background:var(--red);"></div>招募效益<div class="legend-val">15%</div></div>
-          </div>
-        </div>
-        <div style="font-size:10px;color:var(--muted);margin-top:12px;">友善育兒政策對企業 S（Social）面向的效益分佈示意</div>
-      </div>
-    </div>
-
-    <!-- Birth rate line chart -->
-    <div class="chart-box" style="margin:16px 0;">
-      <div class="chart-title">📉 近10年臺灣出生人數急速下降（單位：萬人）</div>
-      <div style="position:relative;width:100%;height:160px;">
-        <svg viewBox="0 0 740 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-          <!-- Grid lines -->
-          <line x1="60" y1="10" x2="60" y2="130" stroke="#E0ECF4" stroke-width="1"/>
-          <line x1="60" y1="130" x2="720" y2="130" stroke="#E0ECF4" stroke-width="1"/>
-          <line x1="60" y1="10" x2="720" y2="10" stroke="#E0ECF4" stroke-width="0.5" stroke-dasharray="4,3"/>
-          <line x1="60" y1="50" x2="720" y2="50" stroke="#E0ECF4" stroke-width="0.5" stroke-dasharray="4,3"/>
-          <line x1="60" y1="90" x2="720" y2="90" stroke="#E0ECF4" stroke-width="0.5" stroke-dasharray="4,3"/>
-          <!-- Y axis labels -->
-          <text x="50" y="14" text-anchor="end" font-size="10" fill="#8FA3B1">25萬</text>
-          <text x="50" y="54" text-anchor="end" font-size="10" fill="#8FA3B1">20萬</text>
-          <text x="50" y="94" text-anchor="end" font-size="10" fill="#8FA3B1">15萬</text>
-          <text x="50" y="134" text-anchor="end" font-size="10" fill="#8FA3B1">10萬</text>
-          <!-- Data: 2015=21.3, 2016=20.8, 2017=19.4, 2018=18.2, 2019=17.8, 2020=16.5, 2021=15.4, 2022=13.9, 2023=13.5, 2024=13.5萬 -->
-          <!-- Scale: y=10 at 25萬, y=130 at 10萬. Range=15萬, px=120. Per萬=8px. x: 60 to 720, 10 years, step=72px -->
-          <!-- y = 10 + (25 - val) * 8 -->
-          <!-- 21.3→41.6, 20.8→45.6, 19.4→57.2, 18.2→67.6, 17.8→71.6, 16.5→83, 15.4→92.8, 13.9→105.2, 13.5→108.8, 13.5→108.8 -->
-          <!-- Filled area -->
-          <path d="M60,41.6 L132,45.6 L204,57.2 L276,67.6 L348,71.6 L420,83 L492,92.8 L564,105.2 L636,108.8 L708,108.8 L708,130 L60,130 Z"
-            fill="rgba(192,57,43,0.08)"/>
-          <!-- Line -->
-          <polyline points="60,41.6 132,45.6 204,57.2 276,67.6 348,71.6 420,83 492,92.8 564,105.2 636,108.8 708,108.8"
-            fill="none" stroke="#C0392B" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-          <!-- Dots -->
-          <circle cx="60" cy="41.6" r="4" fill="#C0392B"/>
-          <circle cx="132" cy="45.6" r="4" fill="#C0392B"/>
-          <circle cx="204" cy="57.2" r="4" fill="#C0392B"/>
-          <circle cx="276" cy="67.6" r="4" fill="#C0392B"/>
-          <circle cx="348" cy="71.6" r="4" fill="#C0392B"/>
-          <circle cx="420" cy="83" r="4" fill="#C0392B"/>
-          <circle cx="492" cy="92.8" r="4" fill="#C0392B"/>
-          <circle cx="564" cy="105.2" r="4" fill="#C0392B"/>
-          <circle cx="636" cy="108.8" r="4" fill="#C0392B"/>
-          <circle cx="708" cy="108.8" r="4.5" fill="#C0392B" stroke="white" stroke-width="1.5"/>
-          <!-- Value labels -->
-          <text x="60" y="35" text-anchor="middle" font-size="9.5" fill="#C0392B" font-weight="600">21.3</text>
-          <text x="204" y="51" text-anchor="middle" font-size="9.5" fill="#8FA3B1">19.4</text>
-          <text x="420" y="77" text-anchor="middle" font-size="9.5" fill="#8FA3B1">16.5</text>
-          <text x="564" y="99" text-anchor="middle" font-size="9.5" fill="#8FA3B1">13.9</text>
-          <text x="708" y="102" text-anchor="middle" font-size="9.5" fill="#C0392B" font-weight="700">13.5</text>
-          <!-- X axis labels -->
-          <text x="60" y="145" text-anchor="middle" font-size="9.5" fill="#8FA3B1">2015</text>
-          <text x="132" y="145" text-anchor="middle" font-size="9.5" fill="#8FA3B1">2016</text>
-          <text x="204" y="145" text-anchor="middle" font-size="9.5" fill="#8FA3B1">2017</text>
-          <text x="276" y="145" text-anchor="middle" font-size="9.5" fill="#8FA3B1">2018</text>
-          <text x="348" y="145" text-anchor="middle" font-size="9.5" fill="#8FA3B1">2019</text>
-          <text x="420" y="145" text-anchor="middle" font-size="9.5" fill="#8FA3B1">2020</text>
-          <text x="492" y="145" text-anchor="middle" font-size="9.5" fill="#8FA3B1">2021</text>
-          <text x="564" y="145" text-anchor="middle" font-size="9.5" fill="#8FA3B1">2022</text>
-          <text x="636" y="145" text-anchor="middle" font-size="9.5" fill="#8FA3B1">2023</text>
-          <text x="708" y="145" text-anchor="middle" font-size="9.5" fill="#C0392B" font-weight="600">2024</text>
-          <!-- Annotation -->
-          <rect x="490" y="12" width="158" height="28" rx="4" fill="rgba(192,57,43,0.1)" stroke="rgba(192,57,43,0.3)" stroke-width="1"/>
-          <text x="500" y="23" font-size="9.5" fill="#C0392B" font-weight="700">↘ 10年內減少約 36%</text>
-          <text x="500" y="35" font-size="9" fill="#922B21">21.3萬 → 13.5萬</text>
-        </svg>
-      </div>
-      <div style="font-size:10px;color:var(--muted);margin-top:4px;">資料來源：內政部戶政司出生統計（2015–2024年）</div>
-    </div>
-
-    <div class="callout amber">
-      <strong>對管理階層而言</strong>，支持懷孕與育兒員工，不是「對特定族群的偏袒」，而是回應現實社會變化、法令要求與人才競爭的<strong>現代管理基本能力</strong>。
-    </div>
-
-  </div>
-
-  <div class="page-footer">
-    <div class="footer-left">懷孕育兒權益保障 · 管理現場實務指引 · 2026.04</div>
-    <div class="footer-tag">P 6</div>
-  </div>
-</div>
-
-
-<!-- ══════════════════════════════════════════════
-     PAGE 7: 八、公司現有福利政策
+     PAGE 4b: 八、公司現有福利政策
 ══════════════════════════════════════════════ -->
 <div class="page">
   <div class="section-head" style="background:linear-gradient(90deg,#0B4D43,var(--teal));">
@@ -1617,28 +1312,298 @@
       </div>
     </div>
 
-    <!-- How to apply section -->
-    <div style="margin-top:20px;background:var(--light);border-radius:10px;padding:18px 20px;">
-      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:12px;">📌 如何申請公司福利？</div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
-        <div style="text-align:center;padding:12px 8px;background:white;border-radius:8px;border:1px solid var(--border);">
-          <div style="font-size:22px;margin-bottom:6px;">📝</div>
-          <div style="font-size:11.5px;font-weight:700;color:var(--navy);margin-bottom:4px;">Step 1</div>
-          <div style="font-size:11px;color:var(--muted);line-height:1.5;">填寫申請表單<br>（向人資部門索取）</div>
+    <!-- 主管宣導同理心文字 -->
+    <div style="margin-top:20px;border-radius:12px;overflow:hidden;border:1.5px solid var(--border);">
+      <div style="background:linear-gradient(90deg,#0B4D43,var(--teal));padding:10px 18px;">
+        <span style="font-size:13px;font-weight:700;color:white;">💬 給管理者的一段話——宣導員工申請育兒支持制度時，請這樣做</span>
+      </div>
+      <div style="background:#F0FAF8;padding:16px 18px;">
+        <div style="font-size:12.5px;color:var(--ink);line-height:1.9;">
+          當員工提出育兒相關申請時，作為管理者，<strong>第一句話非常重要</strong>。<br>
+          一句「你放心去申請，我們這邊會想辦法安排」，會讓員工感受到被支持；而一句「這樣你的考績可能會受影響」，則可能讓員工從此不敢再開口。
         </div>
-        <div style="text-align:center;padding:12px 8px;background:white;border-radius:8px;border:1px solid var(--border);">
-          <div style="font-size:22px;margin-bottom:6px;">👤</div>
-          <div style="font-size:11.5px;font-weight:700;color:var(--navy);margin-bottom:4px;">Step 2</div>
-          <div style="font-size:11px;color:var(--muted);line-height:1.5;">檢附子女<br>出生證明文件</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;">
+          <div style="background:white;border-radius:8px;padding:12px 14px;border-left:3px solid var(--teal);">
+            <div style="font-size:11.5px;font-weight:700;color:var(--teal);margin-bottom:6px;">✅ 開放同理的回應方式</div>
+            <div style="font-size:11px;color:var(--muted);line-height:1.65;">
+              「謝謝你告訴我，我們一起來想怎麼安排工作交接。」<br>
+              「這是你應有的權益，請放心申請，有什麼需要我協助的嗎？」<br>
+              「育兒不容易，公司有這些制度就是希望支持你。」
+            </div>
+          </div>
+          <div style="background:#FEF5E7;border-radius:8px;padding:12px 14px;border-left:3px solid var(--amber);">
+            <div style="font-size:11.5px;font-weight:700;color:#7D3C00;margin-bottom:6px;">⚠️ 請避免的回應方式</div>
+            <div style="font-size:11px;color:var(--muted);line-height:1.65;">
+              「妳這樣對部門影響很大⋯⋯」<br>
+              「可以不要請嗎？現在專案正在跑。」<br>
+              「先用特休吧，這種假之後再說。」
+            </div>
+          </div>
         </div>
-        <div style="text-align:center;padding:12px 8px;background:white;border-radius:8px;border:1px solid var(--border);">
-          <div style="font-size:22px;margin-bottom:6px;">✅</div>
-          <div style="font-size:11.5px;font-weight:700;color:var(--navy);margin-bottom:4px;">Step 3</div>
-          <div style="font-size:11px;color:var(--muted);line-height:1.5;">送交人資部門<br>審核後生效</div>
+        <div style="margin-top:12px;background:white;border-radius:8px;padding:11px 14px;font-size:12px;color:var(--ink);line-height:1.75;border:1px solid var(--border);">
+          🌱 <strong>請記住：</strong>育兒階段的員工，往往是公司最需要留住的核心人才。一個感受到被支持的員工，會更有歸屬感、更願意在產後全力投入工作。<strong>管理者的態度，決定制度能否真正落地。</strong>
         </div>
       </div>
-      <div style="margin-top:12px;font-size:11.5px;color:var(--muted);text-align:center;">
-        如有疑問請洽人力資源部 傅柔安 Jennifer Fu　☎ (02) 2771-5525 #235
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">懷孕育兒權益保障 · 管理現場實務指引 · 2026.04</div>
+    <div class="footer-tag">P 5</div>
+  </div>
+</div>
+
+
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE 5: 五、母性保護 ＋ 六、處理流程
+══════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-head teal">
+    <div>
+      <div class="section-num">SECTION 05</div>
+      <div class="section-title">🛡️ 女性保護、母性健康保護與職場不法侵害</div>
+    </div>
+  </div>
+
+  <div class="content-sm">
+    <h3 class="sub">（一）母性健康保護——雇主的主動義務，不是「看著辦」</h3>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:10px 0 14px;">
+      <div style="background:var(--pale);border-radius:10px;padding:16px;text-align:center;border-top:3px solid var(--teal);">
+        <div style="font-size:28px;margin-bottom:8px;">🔍</div>
+        <div style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:6px;">危害辨識</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.5;">評估工作環境中對妊娠員工的潛在危險因子</div>
+      </div>
+      <div style="background:var(--pale);border-radius:10px;padding:16px;text-align:center;border-top:3px solid var(--teal);">
+        <div style="font-size:28px;margin-bottom:8px;">🩺</div>
+        <div style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:6px;">健康評估</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.5;">配合人資及臨場醫護專業窗口來進行適性評估，非主管單獨判斷</div>
+      </div>
+      <div style="background:var(--pale);border-radius:10px;padding:16px;text-align:center;border-top:3px solid var(--teal);">
+        <div style="font-size:28px;margin-bottom:8px;">🔄</div>
+        <div style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:6px;">工作調整</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.5;">有較輕易工作可改調時，雇主不得拒絕且不得減薪</div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <div class="warning-icon">⚠️</div>
+      <div class="warning-text">
+        <strong>不能使妊娠中之女性勞工</strong>從事特定危險性或有害性工作。若員工提出身體不適、醫囑建議或工作負荷異常，主管應立即啟動人資／職安協作，不可只用「大家都很忙」帶過。
+      </div>
+    </div>
+
+    <h3 class="sub">（二）職場霸凌與不法侵害——新法公布，現在就要做</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0;">
+      <div class="callout red">
+        <strong>🔴 不能等新專章生效才做</strong><br>
+        現行職安法下的不法侵害預防義務已存在。勞檢會直接檢視企業是否有相關措施。
+      </div>
+      <div class="callout teal">
+        <strong>🟢 我們已經在做</strong><br>
+        已成立申訴管道、保護通報者、避免報復、處理主管言語或管理方式造成之身心危害。
+      </div>
+    </div>
+
+    <div style="height:1px;background:var(--border);margin:14px 0;"></div>
+
+    <!-- Section 6 -->
+    <div style="margin:14px -56px 14px;padding:16px 56px;background:linear-gradient(90deg,#0D3A56,var(--sky));">
+      <div style="font-size:10px;letter-spacing:0.15em;color:rgba(255,255,255,0.6);margin-bottom:3px;font-weight:600;text-transform:uppercase;">SECTION 06</div>
+      <div style="font-size:18px;font-weight:700;color:white;">📝 主管收到申請時的標準處理流程（SOP）</div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-illo">
+          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="20" fill="#EBF4F9" stroke="#BDD7EE" stroke-width="1.5"/>
+            <path d="M14 22h16M22 14v16" stroke="#2E86AB" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="step-content">
+          <div class="step-title">先辨識假別</div>
+          <div class="step-desc">員工申請的是哪一種法定權利？<strong>不要自行把法定假別改成特休、病假或其他名目</strong>。遇到不確定的，先問人資，不要自行駁回。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-illo">
+          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="20" fill="#EBF4F9" stroke="#BDD7EE" stroke-width="1.5"/>
+            <path d="M15 22l5 5 9-9" stroke="#1B8A7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="step-content">
+          <div class="step-title">先支持，再安排</div>
+          <div class="step-desc">先確認權利可依法行使，再處理交接、代理、排程。<strong>順序不能反過來</strong>——不是「安排好了才核准」。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-illo">
+          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="20" fill="#EBF4F9" stroke="#BDD7EE" stroke-width="1.5"/>
+            <rect x="14" y="14" width="16" height="20" rx="2" stroke="#2E86AB" stroke-width="1.5"/>
+            <line x1="18" y1="20" x2="26" y2="20" stroke="#2E86AB" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="18" y1="25" x2="26" y2="25" stroke="#2E86AB" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="step-content">
+          <div class="step-title">立即留痕</div>
+          <div class="step-desc">申請內容、核准情形、工作調整、交接安排都要留下書面紀錄。<strong>避免口頭處理後各說各話</strong>，這也是保護主管自己。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-illo">
+          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="20" fill="#FEF5E7" stroke="#F5CBA7" stroke-width="1.5"/>
+            <path d="M22 14v10l6 4" stroke="#E67E22" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="step-content">
+          <div class="step-title">健康風險立即升級處理</div>
+          <div class="step-desc">如安胎、久站、搬重、夜班、醫囑限制等，<strong>應同步通知人資與職安窗口</strong>，不可由主管單獨處理。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-illo">
+          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="20" fill="#EBF4F9" stroke="#BDD7EE" stroke-width="1.5"/>
+            <path d="M14 30c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#2E86AB" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="22" cy="18" r="4" stroke="#2E86AB" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="step-content">
+          <div class="step-title">復職要有銜接期</div>
+          <div class="step-desc">員工產後或育嬰留停復職，主管應安排工作銜接、制度更新說明與<strong>合理適應期</strong>，不能第一天回來就全速壓績效。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 獨立警示：避免不當言語 -->
+    <div style="margin-top:16px;border:3px solid #C0392B;border-radius:12px;overflow:hidden;">
+      <div style="background:#C0392B;padding:10px 18px;display:flex;align-items:center;gap:10px;">
+        <span style="font-size:20px;">🚨</span>
+        <div>
+          <div style="font-size:14px;font-weight:900;color:white;letter-spacing:0.03em;">全程特別注意：嚴格避免不當言語</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.8);margin-top:1px;">以下言語一旦說出口，即可能成為申訴或勞動檢查的直接事證</div>
+        </div>
+      </div>
+      <div style="background:#FDEDEC;padding:14px 18px;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div>
+          <div style="font-size:11px;font-weight:700;color:#922B21;margin-bottom:6px;">❌ 絕對不能說的話</div>
+          <div style="font-size:11.5px;color:var(--ink);line-height:1.8;">
+            「妳這樣會影響部門」<br>
+            「以後升遷會受影響」<br>
+            「妳都懷孕了還能做這個嗎？」<br>
+            「先不要請啦，部門不好看」
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--teal);margin-bottom:6px;">✅ 建議的說話方式</div>
+          <div style="font-size:11.5px;color:var(--ink);line-height:1.8;">
+            「你放心申請，我們來想交接安排。」<br>
+            「這是你的法定權益，請直接使用。」<br>
+            「有什麼我可以協助的嗎？」<br>
+            「產後回來慢慢適應，不用急。」
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">懷孕育兒權益保障 · 管理現場實務指引 · 2026.04</div>
+    <div class="footer-tag">P 6</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE 7: SECTION 07 — 法律風險
+══════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-head" style="background:linear-gradient(90deg,#7B241C,#C0392B);">
+    <div>
+      <div class="section-num">SECTION 07-A</div>
+      <div class="section-title">⚖️ 管理者必知：如何保護公司與自己不踩違法界線</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <!-- 核心出發點 -->
+    <div style="border:2px solid #C0392B;border-radius:12px;overflow:hidden;margin-bottom:20px;">
+      <div style="background:#C0392B;padding:11px 18px;">
+        <span style="font-size:14px;font-weight:700;color:white;">🔴 這份指引最重要的目的：保護公司與主管不觸法</span>
+      </div>
+      <div style="background:#FDEDEC;padding:16px 18px;font-size:13px;color:var(--ink);line-height:1.9;">
+        主管在管理現場，有時出於為公司著想的初衷，例如認為員工懷孕後能負責的工作變少、會增加其他同仁的負擔，因而開始調整工作安排、讓員工感受到被邊緣化，甚至希望透過考績壓力讓員工自行離職、為公司節省資遣費用。<br><br>
+        <strong style="color:#C0392B;">這樣的出發點雖是為公司著想，但實際上卻讓公司暴露在更大的勞資風險中：</strong>員工可依法提出申訴、申請勞動檢查，或以「職場不法侵害」進行檢舉，主管與公司都可能面臨行政裁罰與民事賠償責任。
+      </div>
+    </div>
+
+    <!-- 三種風險類型 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px;">
+      <div style="background:#FEF5E7;border-radius:10px;padding:18px 16px;border-top:4px solid var(--amber);">
+        <div style="font-size:28px;margin-bottom:10px;">🔍</div>
+        <div style="font-size:13px;font-weight:700;color:var(--amber);margin-bottom:6px;">勞動檢查</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.6;">違反性平法、勞基法等，主管機關可主動稽查，裁罰由公司承擔。雇主名稱及負責人將被公開公告。</div>
+      </div>
+      <div style="background:#FDEDEC;border-radius:10px;padding:18px 16px;border-top:4px solid var(--red);">
+        <div style="font-size:28px;margin-bottom:10px;">📋</div>
+        <div style="font-size:13px;font-weight:700;color:var(--red);margin-bottom:6px;">員工申訴</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.6;">員工可向地方勞工局申訴，調查期間公司需配合說明。所有紀錄（含對話）均可成為調查依據。</div>
+      </div>
+      <div style="background:#F8F0FE;border-radius:10px;padding:18px 16px;border-top:4px solid #8E44AD;">
+        <div style="font-size:28px;margin-bottom:10px;">⚖️</div>
+        <div style="font-size:13px;font-weight:700;color:#8E44AD;margin-bottom:6px;">職場不法侵害</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.6;">言語、邊緣化、考績打壓均可能構成。雇主需負舉證與賠償責任，且無法以「不知道」免責。</div>
+      </div>
+    </div>
+
+    <!-- 真實判決案例 -->
+    <div style="border:1.5px solid #F5B7B1;border-radius:12px;overflow:hidden;margin-bottom:20px;">
+      <div style="background:#C0392B;padding:10px 18px;display:flex;align-items:center;gap:10px;">
+        <span style="font-size:16px;">⚖️</span>
+        <span style="font-size:13px;font-weight:700;color:white;">真實判決案例：這些事情真的發生過</span>
+      </div>
+      <div style="background:#FEF5E7;padding:14px 18px;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div style="background:white;border-radius:8px;padding:12px 14px;border-left:4px solid #C0392B;">
+          <div style="font-size:11.5px;font-weight:700;color:#C0392B;margin-bottom:6px;">📌 科技公司｜行政裁罰 30 萬元</div>
+          <div style="font-size:12px;color:var(--ink);line-height:1.65;">員工懷孕後以「長期業績不佳」資遣，申訴時公司無法提出客觀績效佐證，被認定懷孕歧視，依性平法裁處 <strong>30 萬元罰鍰</strong>，並公告公司名稱及負責人姓名。</div>
+        </div>
+        <div style="background:white;border-radius:8px;padding:12px 14px;border-left:4px solid #E67E22;">
+          <div style="font-size:11.5px;font-weight:700;color:#E67E22;margin-bottom:6px;">📌 廣告公司｜民事賠償逾 30 萬元</div>
+          <div style="font-size:12px;color:var(--ink);line-height:1.65;">以「懷孕無法勝任工作」資遣，法院判決資遣無效，須補發<strong>解僱期間薪資逾 10 萬元</strong>，另加計<strong>精神慰撫金 20 萬元</strong>。費用遠超過原本想省的資遣費。</div>
+        </div>
+      </div>
+      <div style="background:#FEF0E6;padding:9px 18px;font-size:11.5px;color:#7D3C00;text-align:center;font-weight:600;">
+        ⚠️ 違反性平法最高可處 <strong>150 萬元</strong>罰鍰，且主管機關將主動公告公司名稱及負責人姓名
+      </div>
+    </div>
+
+    <!-- 法令裁罰一覽 -->
+    <div style="background:var(--light);border-radius:10px;padding:16px 18px;">
+      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:12px;">📊 法令明定的裁罰範圍</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+        <div style="background:white;border-radius:8px;padding:12px;text-align:center;border-top:3px solid var(--red);">
+          <div style="font-size:22px;font-weight:900;color:var(--red);">30–150萬</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4;">因懷孕歧視解僱、資遣<br>行政罰鍰（元）</div>
+        </div>
+        <div style="background:white;border-radius:8px;padding:12px;text-align:center;border-top:3px solid var(--amber);">
+          <div style="font-size:22px;font-weight:900;color:var(--amber);">2–30萬</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4;">因假別申請予以不利處分<br>行政罰鍰（元）</div>
+        </div>
+        <div style="background:white;border-radius:8px;padding:12px;text-align:center;border-top:3px solid var(--navy);">
+          <div style="font-size:22px;font-weight:900;color:var(--navy);">薪資＋精神損害</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4;">民事賠償：補發薪資<br>＋精神慰撫金</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1651,74 +1616,347 @@
 
 
 <!-- ══════════════════════════════════════════════
-     PAGE 8: 九、結語
+     PAGE 8: SECTION 08 — 留才 + 勞動力數據
+══════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-head" style="background:linear-gradient(90deg,#1A5276,var(--sky));">
+    <div>
+      <div class="section-num">SECTION 08</div>
+      <div class="section-title">👥 留住人才：看臺灣勞動力結構數據變化談留才</div>
+    </div>
+  </div>
+
+  <div class="content-sm">
+    <div class="section-intro">在人口結構快速老化的台灣，<strong>留才</strong>已不只是人資議題，而是每位管理者必須正視的經營現實。以下從出生率、勞動力結構兩個維度，說明為什麼懷孕育兒階段的員工，是最值得支持留住的關鍵人才。</div>
+
+    <!-- 數字亮點 -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;">
+      <div style="background:var(--light);border-radius:8px;padding:12px 8px;text-align:center;border-top:3px solid var(--sky);">
+        <div style="font-size:10px;color:var(--muted);margin-bottom:3px;">勞動力總人數（2024估）</div>
+        <div style="font-size:20px;font-weight:900;color:var(--sky);line-height:1.1;">1,201.6<span style="font-size:11px;">萬</span></div>
+      </div>
+      <div style="background:#FEF9F0;border-radius:8px;padding:12px 8px;text-align:center;border-top:3px solid var(--amber);">
+        <div style="font-size:10px;color:var(--muted);margin-bottom:3px;">青年（15-24歲）佔比</div>
+        <div style="font-size:20px;font-weight:900;color:var(--amber);line-height:1.1;">5.9<span style="font-size:11px;">%</span></div>
+        <div style="font-size:10px;color:var(--muted);">2030估（現6.8%）</div>
+      </div>
+      <div style="background:var(--pale);border-radius:8px;padding:12px 8px;text-align:center;border-top:3px solid var(--teal);">
+        <div style="font-size:10px;color:var(--muted);margin-bottom:3px;">55歲以上勞動力佔比</div>
+        <div style="font-size:20px;font-weight:900;color:var(--teal);line-height:1.1;">24.0<span style="font-size:11px;">%</span></div>
+        <div style="font-size:10px;color:var(--muted);">2030估（現18.8%）</div>
+      </div>
+      <div style="background:#FDEDEC;border-radius:8px;padding:12px 8px;text-align:center;border-top:3px solid var(--red);">
+        <div style="font-size:10px;color:var(--muted);margin-bottom:3px;">出生人數10年內減少</div>
+        <div style="font-size:20px;font-weight:900;color:var(--red);line-height:1.1;">36<span style="font-size:11px;">%</span></div>
+        <div style="font-size:10px;color:var(--muted);">21.3萬 → 13.5萬</div>
+      </div>
+    </div>
+
+    <!-- 兩圖並排：折線圖 + 堆疊長條圖 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
+      <!-- 折線圖 -->
+      <div class="chart-box">
+        <div class="chart-title" style="font-size:11px;">📉 近10年臺灣出生人數（萬人）</div>
+        <div style="position:relative;width:100%;height:130px;">
+          <svg viewBox="0 0 380 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <line x1="36" y1="10" x2="36" y2="110" stroke="#E0ECF4" stroke-width="1"/>
+            <line x1="36" y1="110" x2="370" y2="110" stroke="#E0ECF4" stroke-width="1"/>
+            <line x1="36" y1="10" x2="370" y2="10" stroke="#E0ECF4" stroke-width="0.5" stroke-dasharray="3,2"/>
+            <line x1="36" y1="50" x2="370" y2="50" stroke="#E0ECF4" stroke-width="0.5" stroke-dasharray="3,2"/>
+            <line x1="36" y1="90" x2="370" y2="90" stroke="#E0ECF4" stroke-width="0.5" stroke-dasharray="3,2"/>
+            <text x="30" y="14" text-anchor="end" font-size="8" fill="#8FA3B1">25萬</text>
+            <text x="30" y="54" text-anchor="end" font-size="8" fill="#8FA3B1">18萬</text>
+            <text x="30" y="94" text-anchor="end" font-size="8" fill="#8FA3B1">12萬</text>
+            <!-- scale: 10=25萬, 110=10萬, range=15萬, px=100, per萬=6.67 -->
+            <!-- 21.3→10+(25-21.3)*6.67=34.7, 20.8→38, 19.4→47, 18.2→56, 17.8→59, 16.5→68.8, 15.4→76.1, 13.9→87.2, 13.5→90, 13.5→90 -->
+            <path d="M36,34.7 L73,38 L110,47 L147,56 L184,59 L221,68.8 L258,76.1 L295,87.2 L332,90 L369,90 L369,110 L36,110 Z" fill="rgba(192,57,43,0.08)"/>
+            <polyline points="36,34.7 73,38 110,47 147,56 184,59 221,68.8 258,76.1 295,87.2 332,90 369,90" fill="none" stroke="#C0392B" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="36" cy="34.7" r="3" fill="#C0392B"/>
+            <circle cx="369" cy="90" r="3.5" fill="#C0392B" stroke="white" stroke-width="1"/>
+            <text x="36" y="28" text-anchor="middle" font-size="8" fill="#C0392B" font-weight="700">21.3</text>
+            <text x="369" y="84" text-anchor="middle" font-size="8" fill="#C0392B" font-weight="700">13.5</text>
+            <text x="36" y="126" text-anchor="middle" font-size="7.5" fill="#8FA3B1">2015</text>
+            <text x="184" y="126" text-anchor="middle" font-size="7.5" fill="#8FA3B1">2019</text>
+            <text x="369" y="126" text-anchor="middle" font-size="7.5" fill="#C0392B">2024</text>
+          </svg>
+        </div>
+        <div style="font-size:9px;color:var(--muted);">資料來源：內政部戶政司</div>
+      </div>
+
+      <!-- 堆疊長條圖 -->
+      <div class="chart-box">
+        <div class="chart-title" style="font-size:11px;">📊 勞動力年齡結構變化（萬人）</div>
+        <div style="position:relative;width:100%;height:130px;">
+          <svg viewBox="0 0 380 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <line x1="36" y1="10" x2="36" y2="110" stroke="#E0ECF4" stroke-width="1"/>
+            <line x1="36" y1="110" x2="370" y2="110" stroke="#E0ECF4" stroke-width="1"/>
+            <line x1="36" y1="10" x2="370" y2="10" stroke="#E0ECF4" stroke-width="0.5" stroke-dasharray="3,2"/>
+            <line x1="36" y1="55" x2="370" y2="55" stroke="#E0ECF4" stroke-width="0.5" stroke-dasharray="3,2"/>
+            <text x="30" y="14" text-anchor="end" font-size="8" fill="#8FA3B1">1400萬</text>
+            <text x="30" y="59" text-anchor="end" font-size="8" fill="#8FA3B1">700萬</text>
+            <!-- 2018: scale 1400->100px, per100=7.14px; 97.2→6.9px, 904.2→64.6px, 186→13.3px -->
+            <rect x="70" y="103.1" width="60" height="6.9" fill="#F4C842" opacity="0.9"/>
+            <rect x="70" y="38.5" width="60" height="64.6" fill="#2E86AB" opacity="0.9"/>
+            <rect x="70" y="25.2" width="60" height="13.3" fill="#0D2B4E" opacity="0.9"/>
+            <text x="100" y="107" text-anchor="middle" font-size="7.5" fill="#7D5A00">97.2</text>
+            <text x="100" y="63" text-anchor="middle" font-size="8" fill="white" font-weight="700">904.2</text>
+            <text x="100" y="34" text-anchor="middle" font-size="7.5" fill="white">186.0</text>
+            <text x="100" y="20" text-anchor="middle" font-size="8" fill="#1C2B3A" font-weight="700">1,187.4</text>
+            <!-- 2024: 82→5.86, 893.6→63.8, 226→16.1 -->
+            <rect x="160" y="104.1" width="60" height="5.9" fill="#F4C842" opacity="0.9"/>
+            <rect x="160" y="40.3" width="60" height="63.8" fill="#2E86AB" opacity="0.9"/>
+            <rect x="160" y="24.2" width="60" height="16.1" fill="#0D2B4E" opacity="0.9"/>
+            <text x="190" y="108" text-anchor="middle" font-size="7.5" fill="#7D5A00">82.0</text>
+            <text x="190" y="65" text-anchor="middle" font-size="8" fill="white" font-weight="700">893.6</text>
+            <text x="190" y="35" text-anchor="middle" font-size="7.5" fill="white">226.0</text>
+            <text x="190" y="20" text-anchor="middle" font-size="8" fill="#1C2B3A" font-weight="700">1,201.6</text>
+            <!-- 2030: 71.7→5.1, 854.1→61, 291.8→20.8 -->
+            <rect x="250" y="104.9" width="60" height="5.1" fill="#F4C842" opacity="0.9"/>
+            <rect x="250" y="43.9" width="60" height="61" fill="#2E86AB" opacity="0.9"/>
+            <rect x="250" y="23.1" width="60" height="20.8" fill="#0D2B4E" opacity="0.9"/>
+            <text x="280" y="108" text-anchor="middle" font-size="7.5" fill="#7D5A00">71.7</text>
+            <text x="280" y="67" text-anchor="middle" font-size="8" fill="white" font-weight="700">854.1</text>
+            <text x="280" y="36" text-anchor="middle" font-size="7.5" fill="white">291.8</text>
+            <text x="280" y="20" text-anchor="middle" font-size="8" fill="#1C2B3A" font-weight="700">1,217.6</text>
+            <!-- X labels -->
+            <text x="100" y="126" text-anchor="middle" font-size="8" fill="#1C2B3A">2018</text>
+            <text x="190" y="126" text-anchor="middle" font-size="8" fill="#1C2B3A">2024</text>
+            <text x="280" y="126" text-anchor="middle" font-size="8" fill="#1C2B3A">2030(估)</text>
+            <!-- Legend -->
+            <rect x="330" y="40" width="8" height="8" fill="#F4C842" rx="1"/>
+            <text x="342" y="48" font-size="7.5" fill="#1C2B3A">15-24歲</text>
+            <rect x="330" y="55" width="8" height="8" fill="#2E86AB" rx="1"/>
+            <text x="342" y="63" font-size="7.5" fill="#1C2B3A">25-54歲</text>
+            <rect x="330" y="70" width="8" height="8" fill="#0D2B4E" rx="1"/>
+            <text x="342" y="78" font-size="7.5" fill="#1C2B3A">55歲+</text>
+          </svg>
+        </div>
+        <div style="font-size:9px;color:var(--muted);">資料來源：主計總處・國發會</div>
+      </div>
+    </div>
+
+    <!-- 5大重點 精簡版 -->
+    <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:14px;">
+      <div style="display:flex;gap:8px;align-items:center;padding:7px 12px;background:#F8FAFC;border-radius:6px;border-left:3px solid var(--sky);">
+        <div style="font-size:11px;font-weight:700;color:var(--sky);flex-shrink:0;">①</div>
+        <div style="font-size:11.5px;color:var(--ink);">勞動力結構持續老化，核心年齡將從35–44歲延後至45–54歲。</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;padding:7px 12px;background:#FDEDEC;border-radius:6px;border-left:3px solid var(--red);">
+        <div style="font-size:11px;font-weight:700;color:var(--red);flex-shrink:0;">②</div>
+        <div style="font-size:11.5px;color:var(--ink);"><strong>青年勞動力（15–24歲）</strong>佔比從6.8%降至5.9%，新鮮人才愈來愈少。</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;padding:7px 12px;background:#FDEDEC;border-radius:6px;border-left:3px solid var(--red);">
+        <div style="font-size:11px;font-weight:700;color:var(--red);flex-shrink:0;">③</div>
+        <div style="font-size:11.5px;color:var(--ink);"><strong>25–54歲主力勞動力</strong>佔比從74.4%降至70.1%，留住現有人才比招募新人更關鍵。</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;padding:7px 12px;background:#FDEDEC;border-radius:6px;border-left:3px solid var(--red);">
+        <div style="font-size:11px;font-weight:700;color:var(--red);flex-shrink:0;">④</div>
+        <div style="font-size:11.5px;color:var(--ink);"><strong>55歲以上</strong>佔比從18.8%升至24.0%，中高齡人力將成市場關鍵支柱。</div>
+      </div>
+    </div>
+
+    <!-- 留才核心論點 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+      <div style="background:var(--light);border-radius:8px;padding:12px;border-left:3px solid var(--sky);">
+        <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:5px;">💰 留才的經濟效益</div>
+        <div style="font-size:11px;color:var(--muted);line-height:1.6;">重新招募一名員工的總成本通常為年薪的 <strong>50–200%</strong>，支持現有員工留任遠比資遣再招募划算。</div>
+      </div>
+      <div style="background:var(--pale);border-radius:8px;padding:12px;border-left:3px solid var(--teal);">
+        <div style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:5px;">🌱 人才稀缺時代的現實</div>
+        <div style="font-size:11px;color:var(--muted);line-height:1.6;">懷孕育兒階段的員工往往是公司<strong>最成熟、最有價值</strong>的人才，失去他們的代價遠超過短期管理不便。</div>
+      </div>
+    </div>
+
+    <div style="background:linear-gradient(135deg,var(--navy),#1A5276);border-radius:8px;padding:12px 16px;display:flex;gap:12px;align-items:center;">
+      <span style="font-size:20px;flex-shrink:0;">💡</span>
+      <div style="font-size:12px;color:white;line-height:1.7;"><strong style="color:#F4C842;">管理者的留才行動從這裡開始：</strong>支持員工依法行使懷孕育兒權益，是提升忠誠度、降低離職率最直接有效的方式。<strong>一個被善待的員工，回來之後會更賣力。</strong></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">懷孕育兒權益保障 · 管理現場實務指引 · 2026.04</div>
+    <div class="footer-tag">P 8</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE 9: SECTION 09 — ESG
+══════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-head" style="background:linear-gradient(90deg,#0B4D43,var(--teal));">
+    <div>
+      <div class="section-num">SECTION 09</div>
+      <div class="section-title">🌱 ESG 視角：友善育兒政策對公司的長期價值</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-intro">在全球 ESG（環境 · 社會 · 治理）浪潮下，企業對員工的對待方式，已成為評估企業永續價值的關鍵指標。友善懷孕育兒政策，是公司 ESG 表現中 <strong>S（社會）面向</strong>最具體、最可衡量的一環。</div>
+
+    <!-- ESG S 面向說明 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+      <div style="border:1.5px solid var(--border);border-radius:10px;overflow:hidden;">
+        <div style="background:var(--teal);padding:10px 14px;font-size:12.5px;font-weight:700;color:white;">🌍 ESG · S（社會）面向涵蓋</div>
+        <div style="padding:14px;font-size:12.5px;color:var(--ink);line-height:1.9;">
+          ✦ 員工權益保障與勞動條件<br>
+          ✦ 職場多元共融（DEI）<br>
+          ✦ 員工身心健康支持<br>
+          ✦ 工作與生活平衡制度<br>
+          ✦ <strong style="color:var(--teal);">母性保護與育兒友善措施</strong>
+        </div>
+      </div>
+      <div style="border:1.5px solid var(--border);border-radius:10px;overflow:hidden;">
+        <div style="background:var(--navy);padding:10px 14px;font-size:12.5px;font-weight:700;color:white;">📈 友善育兒對 ESG 評分的影響</div>
+        <div style="padding:14px;font-size:12.5px;color:var(--ink);line-height:1.9;">
+          ✦ 提升 ESG 外部評等與報告分數<br>
+          ✦ 強化機構投資人信心<br>
+          ✦ 提高企業社會責任報告質量<br>
+          ✦ 在客戶與合作夥伴審核中加分<br>
+          ✦ <strong style="color:var(--navy);">降低勞資爭議帶來的聲譽風險</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESG 效益甜甜圈圖 -->
+    <div class="chart-box" style="margin-bottom:20px;">
+      <div class="chart-title">📌 友善育兒政策對企業 S（Social）面向的效益分佈</div>
+      <div style="display:flex;align-items:center;gap:32px;padding:8px 0;">
+        <svg width="140" height="140" viewBox="0 0 100 100" style="flex-shrink:0;">
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#EBF4F9" stroke-width="16"/>
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#2E86AB" stroke-width="16" stroke-dasharray="83.5 155.6" stroke-dashoffset="155.6" transform="rotate(-90 50 50)"/>
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#1B8A7A" stroke-width="16" stroke-dasharray="66.8 155.6" stroke-dashoffset="72.1" transform="rotate(-90 50 50)"/>
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#E67E22" stroke-width="16" stroke-dasharray="52.4 155.6" stroke-dashoffset="5.3" transform="rotate(-90 50 50)"/>
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#C0392B" stroke-width="16" stroke-dasharray="35.8 155.6" stroke-dashoffset="-47.1" transform="rotate(-90 50 50)"/>
+          <text x="50" y="47" text-anchor="middle" font-size="9" font-weight="700" fill="#1C2B3A">ESG</text>
+          <text x="50" y="58" text-anchor="middle" font-size="9" font-weight="700" fill="#1C2B3A">Social</text>
+        </svg>
+        <div style="flex:1;display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:center;gap:10px;background:var(--light);border-radius:8px;padding:10px 14px;">
+            <div style="width:14px;height:14px;border-radius:3px;background:#2E86AB;flex-shrink:0;"></div>
+            <div style="flex:1;font-size:12.5px;color:var(--ink);">留才穩定</div>
+            <div style="font-size:14px;font-weight:700;color:#2E86AB;">35%</div>
+            <div style="font-size:11px;color:var(--muted);">降低員工流動率，節省招募成本</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;background:var(--pale);border-radius:8px;padding:10px 14px;">
+            <div style="width:14px;height:14px;border-radius:3px;background:#1B8A7A;flex-shrink:0;"></div>
+            <div style="flex:1;font-size:12.5px;color:var(--ink);">雇主品牌</div>
+            <div style="font-size:14px;font-weight:700;color:#1B8A7A;">28%</div>
+            <div style="font-size:11px;color:var(--muted);">提升求職吸引力，強化雇主形象</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;background:#FEF9F0;border-radius:8px;padding:10px 14px;">
+            <div style="width:14px;height:14px;border-radius:3px;background:#E67E22;flex-shrink:0;"></div>
+            <div style="flex:1;font-size:12.5px;color:var(--ink);">法規遵循</div>
+            <div style="font-size:14px;font-weight:700;color:#E67E22;">22%</div>
+            <div style="font-size:11px;color:var(--muted);">降低勞資爭議與裁罰風險</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;background:#FDEDEC;border-radius:8px;padding:10px 14px;">
+            <div style="width:14px;height:14px;border-radius:3px;background:#C0392B;flex-shrink:0;"></div>
+            <div style="flex:1;font-size:12.5px;color:var(--ink);">招募效益</div>
+            <div style="font-size:14px;font-weight:700;color:#C0392B;">15%</div>
+            <div style="font-size:11px;color:var(--muted);">友善職場吸引優秀人才加入</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 這份宣導書和 ESG 的連結 -->
+    <div style="background:linear-gradient(135deg,#0B4D43,var(--teal));border-radius:12px;padding:18px 22px;">
+      <div style="font-size:13px;font-weight:700;color:white;margin-bottom:12px;">🔗 這份指引與公司 ESG 目標的直接連結</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
+        <div style="background:rgba(255,255,255,0.12);border-radius:8px;padding:14px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:8px;">📋</div>
+          <div style="font-size:12px;font-weight:700;color:white;margin-bottom:5px;">依法行事</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.8);line-height:1.55;">確保法規遵循，直接提升 ESG 評分中的 G（治理）與 S（社會）面向</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.12);border-radius:8px;padding:14px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:8px;">🤝</div>
+          <div style="font-size:12px;font-weight:700;color:white;margin-bottom:5px;">支持員工</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.8);line-height:1.55;">落實員工關懷政策，強化 ESG 年報中「員工福祉」指標的具體成果</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.12);border-radius:8px;padding:14px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:8px;">🏆</div>
+          <div style="font-size:12px;font-weight:700;color:white;margin-bottom:5px;">建立品牌</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.8);line-height:1.55;">友善職場形象提升雇主品牌，在人才市場與商業夥伴評核中脫穎而出</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">懷孕育兒權益保障 · 管理現場實務指引 · 2026.04</div>
+    <div class="footer-tag">P 9</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE 10: 十、結語
 ══════════════════════════════════════════════ -->
 <div class="page">
   <div class="section-head" style="background:linear-gradient(90deg,var(--navy),#1A5276);">
     <div>
-      <div class="section-num">SECTION 09</div>
-      <div class="section-title">✅ 結語</div>
+      <div class="section-num">SECTION 10</div>
+      <div class="section-title">✅ 結語——與您同行，共創友善職場</div>
     </div>
   </div>
 
   <div class="content">
     <div class="conclusion-banner">
       <p>
-        對公司而言，懷孕、分娩與育兒，不應被視為管理上的例外狀況或組織負擔，而是企業在人才經營過程中必須正視並承接的重要人生歷程。公司持續強化女性保護與育兒友善支持，並非僅為符合法令要求，更是基於<strong>永續經營、留才穩定、雇主品牌與組織責任</strong>所做出的管理選擇。
+        這份指引的核心出發點，是幫助每一位管理者在面對懷孕、育兒相關議題時，能夠依法正確處理，<strong>避免讓公司與自己暴露在勞動檢查、員工申訴或職場不法侵害的法律風險中</strong>。許多爭議的發生，並非出於惡意，而是主管不清楚法令界線，或在壓力下做出了有違法規的判斷。
         <br><br>
-        主管作為制度落地的第一線，應以一致、正確且具支持性的態度回應員工需求，避免因錯誤判斷或不當處理導致法律風險、勞資爭議及人才流失。<strong style="color:#F4C842;font-size:15px;line-height:2;display:block;margin-top:12px;letter-spacing:0.03em;">唯有當管理者真正理解並支持制度，友善職場承諾才會從文字規定，轉化為員工實際感受到的工作安全感與信任感。</strong>
+        在人才結構快速老化、青年勞動力持續縮減的環境下，<strong>留住現有優秀人才，比重新招募更有效率、也更節省成本</strong>。依法處理懷孕育兒議題，不是在「照顧某些員工的特權」，而是在保護公司的人力資產，同時為公司的 ESG 永續形象加分。
+        <br><br>
+        <strong style="color:#F4C842;font-size:15px;line-height:2;display:block;margin-top:12px;letter-spacing:0.03em;">每一位管理者都是友善職場最重要的推手——感謝您願意了解、願意支持，讓制度真正走進每位員工的工作日常。</strong>
       </p>
     </div>
 
-    <!-- Quick reminder cards -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0;">
-      <div style="background:var(--light);border-radius:10px;padding:16px;text-align:center;">
-        <div style="font-size:24px;margin-bottom:8px;">🛑</div>
-        <div style="font-size:12px;font-weight:700;color:var(--red);margin-bottom:6px;">不能做</div>
-        <div style="font-size:11.5px;color:var(--muted);line-height:1.55;">以工作需要否決法定假別、不當評語、差別對待</div>
-      </div>
-      <div style="background:var(--pale);border-radius:10px;padding:16px;text-align:center;">
-        <div style="font-size:24px;margin-bottom:8px;">✅</div>
-        <div style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:6px;">應該做</div>
-        <div style="font-size:11.5px;color:var(--muted);line-height:1.55;">先支持再安排、留痕、通報健康風險、銜接復職</div>
-      </div>
-      <div style="background:#FEF9F0;border-radius:10px;padding:16px;text-align:center;">
-        <div style="font-size:24px;margin-bottom:8px;">❓</div>
-        <div style="font-size:12px;font-weight:700;color:var(--amber);margin-bottom:6px;">不確定時</div>
-        <div style="font-size:11.5px;color:var(--muted);line-height:1.55;">先問人資，不要自行判斷，不要口頭回絕</div>
-      </div>
-    </div>
+    <!-- 三大核心提醒 -->
+    <div style="display:flex;flex-direction:column;gap:16px;margin:24px 0;">
 
-    <div class="divider"></div>
+      <!-- 法律面 -->
+      <div style="border-radius:12px;overflow:hidden;border:1.5px solid #C0392B;">
+        <div style="background:#C0392B;padding:12px 20px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:22px;">⚖️</span>
+          <div>
+            <div style="font-size:13px;font-weight:800;color:white;letter-spacing:0.02em;">法律面：保護公司，也保護自己</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.8);margin-top:1px;">依法行事是管理者最重要的自我保護</div>
+          </div>
+        </div>
+        <div style="background:#FDEDEC;padding:12px 20px;font-size:12.5px;color:var(--ink);line-height:1.75;">
+          法定假別不可改請特休、不可拒絕、不可以工作需要為由否決；差別對待、不當言語都可能成為申訴事證。<strong style="color:#C0392B;">合法處理，是最直接保護公司與自己的方式。</strong>
+        </div>
+      </div>
 
-    <!-- Management pledge visual -->
-    <div style="margin-bottom:24px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
-      <div style="background:var(--light);border-radius:10px;padding:16px;text-align:center;border-top:3px solid var(--sky);">
-        <svg width="36" height="36" viewBox="0 0 44 44" fill="none" style="margin:0 auto 8px;">
-          <circle cx="22" cy="22" r="20" fill="#EBF4F9" stroke="#BDD7EE" stroke-width="1.5"/>
-          <path d="M14 22l6 6 10-10" stroke="#2E86AB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <div style="font-size:12px;font-weight:700;color:var(--sky);margin-bottom:4px;">依法行事</div>
-        <div style="font-size:11px;color:var(--muted);line-height:1.5;">以正確的態度<br>回應每一個申請</div>
+      <!-- 制度面 -->
+      <div style="border-radius:12px;overflow:hidden;border:1.5px solid var(--teal);">
+        <div style="background:var(--teal);padding:12px 20px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:22px;">🤝</span>
+          <div>
+            <div style="font-size:13px;font-weight:800;color:white;letter-spacing:0.02em;">制度面：遇到不確定，先問人資</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.8);margin-top:1px;">人資部是你最好的後盾</div>
+          </div>
+        </div>
+        <div style="background:var(--pale);padding:12px 20px;font-size:12.5px;color:var(--ink);line-height:1.75;">
+          遇到任何假別申請、健康風險、復職安排等情況，不確定時請先聯繫人資部，不要口頭回絕、不要自行判斷。<strong style="color:var(--teal);">詢問人資，是最安全也最正確的第一步。</strong>
+        </div>
       </div>
-      <div style="background:var(--pale);border-radius:10px;padding:16px;text-align:center;border-top:3px solid var(--teal);">
-        <svg width="36" height="36" viewBox="0 0 44 44" fill="none" style="margin:0 auto 8px;">
-          <circle cx="22" cy="22" r="20" fill="#F0FAF8" stroke="#A9D9CF" stroke-width="1.5"/>
-          <path d="M22 14v8l5 5" stroke="#1B8A7A" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="22" cy="22" r="8" stroke="#1B8A7A" stroke-width="1.5"/>
-        </svg>
-        <div style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:4px;">即時處理</div>
-        <div style="font-size:11px;color:var(--muted);line-height:1.5;">不拖延、不擱置<br>遇到不確定先問人資</div>
+
+      <!-- 態度面 -->
+      <div style="border-radius:12px;overflow:hidden;border:1.5px solid var(--amber);">
+        <div style="background:var(--amber);padding:12px 20px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:22px;">🌱</span>
+          <div>
+            <div style="font-size:13px;font-weight:800;color:white;letter-spacing:0.02em;">態度面：以開放支持的心，回應每一位員工</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.85);margin-top:1px;">管理者的第一句話，決定制度能否真正落地</div>
+          </div>
+        </div>
+        <div style="background:#FEF9F0;padding:12px 20px;font-size:12.5px;color:var(--ink);line-height:1.75;">
+          支持員工行使育兒權益，不是偏袒，是正確的管理。<strong style="color:#7D3C00;">一個感受到被支持的員工，會更有歸屬感、更願意在產後全力投入工作。</strong>
+        </div>
       </div>
-      <div style="background:#FEF9F0;border-radius:10px;padding:16px;text-align:center;border-top:3px solid var(--amber);">
-        <svg width="36" height="36" viewBox="0 0 44 44" fill="none" style="margin:0 auto 8px;">
-          <circle cx="22" cy="22" r="20" fill="#FEF5E7" stroke="#F5CBA7" stroke-width="1.5"/>
-          <path d="M22 14c-4.4 0-8 3.6-8 8 0 3 1.7 5.7 4.2 7.1L22 30l3.8-0.9C28.3 27.7 30 25 30 22c0-4.4-3.6-8-8-8z" stroke="#E67E22" stroke-width="1.5"/>
-          <path d="M19 22l2 2 4-4" stroke="#E67E22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <div style="font-size:12px;font-weight:700;color:var(--amber);margin-bottom:4px;">用心支持</div>
-        <div style="font-size:11px;color:var(--muted);line-height:1.5;">讓制度從文字<br>變成員工的安全感</div>
-      </div>
+
     </div>
 
     <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:16px;letter-spacing:0.05em;">📞 如有任何疑問，請聯繫</div>
@@ -1735,11 +1973,11 @@
         <div style="display:flex;gap:24px;flex-wrap:wrap;">
           <div style="display:flex;align-items:center;gap:8px;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.71 3.41 2 2 0 0 1 3.68 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.81-.81a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <span style="font-size:13px;color:rgba(255,255,255,0.85);">(02) 2771-5525 #235</span>
+            <span style="font-size:13px;color:rgba(255,255,255,0.85);">(02) 2771-5525 #221</span>
           </div>
           <div style="display:flex;align-items:center;gap:8px;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span style="font-size:13px;color:rgba(255,255,255,0.85);">jennifer.fu@yungloong.com.tw</span>
+            <span style="font-size:13px;color:rgba(255,255,255,0.85);">jennifer.fu@yungloonc.com.tw</span>
           </div>
         </div>
       </div>
@@ -1748,7 +1986,141 @@
 
   <div class="page-footer">
     <div class="footer-left">懷孕育兒權益保障 · 管理現場實務指引 · 2026.04</div>
-    <div class="footer-tag">P 8</div>
+    <div class="footer-tag">P 10</div>
+  </div>
+</div>
+
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE 10: 附錄 — 假別規則說明
+══════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-head" style="background:linear-gradient(90deg,#2C3E50,#4A6274);">
+    <div>
+      <div class="section-num">附　錄</div>
+      <div class="section-title">📋 假別規則說明一覽表</div>
+    </div>
+  </div>
+
+  <div class="content-sm">
+    <div class="callout" style="margin-bottom:16px;">
+      以下為公司現行假別規則摘要，供管理者快速查閱。員工申請假別時，請依下表確認類型，如有疑問請洽人資部。
+      <div style="font-size:10.5px;color:var(--muted);margin-top:4px;">文件編號：HR-R-009-V1 ｜ 更新日期：2026/04/14</div>
+    </div>
+
+    <table style="width:100%;border-collapse:collapse;font-size:11px;">
+      <thead>
+        <tr>
+          <th style="background:var(--navy);color:white;padding:7px 9px;text-align:left;font-size:10.5px;width:75px;">假別</th>
+          <th style="background:var(--navy);color:white;padding:7px 9px;text-align:left;font-size:10.5px;width:125px;">請假原因</th>
+          <th style="background:var(--navy);color:white;padding:7px 9px;text-align:left;font-size:10.5px;width:88px;">天數</th>
+          <th style="background:var(--navy);color:white;padding:7px 9px;text-align:left;font-size:10.5px;width:80px;">薪資給付</th>
+          <th style="background:var(--navy);color:white;padding:7px 9px;text-align:left;font-size:10.5px;">說明重點</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:white;">
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);font-weight:700;color:var(--navy);">特休</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">無</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">按勞基法給予</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);color:var(--teal);font-weight:600;">給薪</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">連續超過5天請於30天前告知；未休完天數於隔年2月底前結算工資</td>
+        </tr>
+        <tr style="background:#F5F9FC;">
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);font-weight:700;color:var(--navy);">事假</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">有事故必須親自處理</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">14天</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);color:var(--red);">不給薪</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">有事故必須親自處理者</td>
+        </tr>
+        <tr style="background:white;">
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);font-weight:700;color:var(--sky);">家庭照顧假</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">家庭成員預防接種、嚴重疾病或重大事故</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">7天</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);color:var(--red);">不給薪</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">併入事假計算；<strong style="color:var(--teal);">不扣全勤，不影響考績</strong></td>
+        </tr>
+        <tr style="background:#F5F9FC;">
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);font-weight:700;color:var(--navy);">普通傷病假</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">未住院者 / 住院者</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">未住院30天；住院2年（不超過1年）</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">全年30日內半薪</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">罹患癌症門診或安胎休養（安胎假），併入住院傷病假計算</td>
+        </tr>
+        <tr style="background:white;">
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);font-weight:700;color:var(--navy);">生理假</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">女性工作者生理原因致工作困難</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">每月1天</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">半薪</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">不需提供證明；1年3天超過者併入病假；<strong style="color:var(--teal);">不扣全勤，不影響考績</strong></td>
+        </tr>
+        <tr style="background:#EBF4F9;">
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);font-weight:700;color:var(--sky);">產檢假／陪產假</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">員工妊娠產檢或配偶妊娠／分娩</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">各7天</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);color:var(--teal);font-weight:600;">給薪</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">陪產假應於配偶分娩當日起15日內請畢；首次申請需提供媽媽手冊或預產期</td>
+        </tr>
+        <tr style="background:#F5F9FC;">
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);font-weight:700;color:var(--sky);">產假</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">妊娠5個月以上至分娩</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">8星期（流產依週數遞減）</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);color:var(--teal);font-weight:600;">給薪</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">年資滿6個月給薪；未滿6個月減半。妊娠2–3個月流產給1星期半薪；未滿2個月流產給5天半薪</td>
+        </tr>
+        <tr style="background:white;">
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);font-weight:700;color:var(--navy);">婚假</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">本人結婚</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">8天</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);color:var(--teal);font-weight:600;">給薪</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">需提供戶口名簿影本</td>
+        </tr>
+        <tr style="background:#F5F9FC;">
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);font-weight:700;color:var(--navy);">喪假</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">親屬喪亡</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">父母／配偶8天；祖父母／子女6天；曾祖父母／兄弟姐妹3天</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);color:var(--teal);font-weight:600;">給薪</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">需提供相關證明（如訃聞、死亡證明）；祖父母不分內外均相同</td>
+        </tr>
+        <tr style="background:white;">
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);font-weight:700;color:var(--navy);">公假</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">依法令規定應給予者</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">視需要</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);color:var(--teal);font-weight:600;">給薪</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">含兵疫點召（含往返路程）；參加職務相關技能檢定亦給公假</td>
+        </tr>
+        <tr style="background:#F5F9FC;">
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);font-weight:700;color:var(--navy);">公傷病假</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">因職業災害致殘廢、傷害或疾病</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">視需要</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);color:var(--teal);font-weight:600;">給薪</td>
+          <td style="padding:6px 9px;border-bottom:1px solid var(--border);">需提供相關證明</td>
+        </tr>
+        <tr style="background:#F0FAF8;">
+          <td style="padding:6px 9px;font-weight:700;color:var(--teal);">歲時祭儀假</td>
+          <td style="padding:6px 9px;">具有法定原住民身分者</td>
+          <td style="padding:6px 9px;">3天</td>
+          <td style="padding:6px 9px;color:var(--teal);font-weight:600;">給薪</td>
+          <td style="padding:6px 9px;">具原住民身分者（含平地及山地），每年可於本人、配偶或父母所屬族群歲時祭儀日期中擇日放假3天；申請時需提供戶口名簿影本</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 補充說明 -->
+    <div style="margin-top:12px;background:var(--light);border-radius:8px;padding:11px 14px;">
+      <div style="font-size:11.5px;font-weight:700;color:var(--navy);margin-bottom:5px;">📌 補充說明</div>
+      <div style="font-size:11px;color:var(--muted);line-height:1.8;">
+        ① 請假最小單位為 <strong>0.5 小時</strong>，每次請假時數最低為 <strong>1 小時</strong>，不足者以 1 小時計算。<br>
+        　 EX：08:30–09:00 請 0.5 小時，後台合計為 1 小時；08:30–10:00 請 1.5 小時，合計為 1.5 小時。<br>
+        ② 如對假勤有任何問題，請洽<strong>人資部</strong>詢問。
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">懷孕育兒權益保障 · 管理現場實務指引 · 2026.04</div>
+    <div class="footer-tag">P 11</div>
   </div>
 </div>
 
